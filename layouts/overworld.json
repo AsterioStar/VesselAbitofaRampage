@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 3.621282057030714,
+    "zoomFactor": 1.6888536947042463,
     "windowMask": false,
     "selectedLayer": ""
   },
@@ -97,6 +97,11 @@
           "value": 0
         },
         {
+          "name": "Name",
+          "type": "string",
+          "value": "0"
+        },
+        {
           "folded": true,
           "name": "Overworld_Stats",
           "type": "structure",
@@ -119,6 +124,11 @@
           "value": "Stick"
         }
       ]
+    },
+    {
+      "name": "Team_Bool",
+      "type": "boolean",
+      "value": false
     }
   ],
   "instances": [
@@ -1740,6 +1750,287 @@
             "\"Ground\"",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "SetLayerEffectParameter"
+          },
+          "parameters": [
+            "",
+            "\"Ground\"",
+            "\"Battle\"",
+            "\"scale\"",
+            "Scale"
+          ]
+        },
+        {
+          "type": {
+            "value": "MettreXY"
+          },
+          "parameters": [
+            "Line",
+            "=",
+            "Player.X()",
+            "=",
+            "Player.Y()"
+          ]
+        },
+        {
+          "type": {
+            "value": "SeparateFromObjects"
+          },
+          "parameters": [
+            "Player",
+            "MapColider",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SeparateFromObjects"
+          },
+          "parameters": [
+            "Player",
+            "Map",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "folded": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "CollisionNP"
+          },
+          "parameters": [
+            "Player",
+            "Enemy",
+            "",
+            "",
+            ""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TopDownMovementBehavior::IgnoreDefaultControls"
+              },
+              "parameters": [
+                "Player",
+                "TopDownMovement",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "ActivateBehavior"
+              },
+              "parameters": [
+                "Enemy",
+                "Pathfinding",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Line",
+                "Player.X()",
+                "Player.Y()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResizableCapability::ResizableBehavior::SetHeight"
+              },
+              "parameters": [
+                "Line",
+                "Resizable",
+                "=",
+                "10"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectWidthTween2"
+              },
+              "parameters": [
+                "Line",
+                "Tween",
+                "\"a\"",
+                "2500",
+                "\"linear\"",
+                "1",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "Enter",
+                "",
+                "Settings.Sounds",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "FadeSoundVolume"
+              },
+              "parameters": [
+                "",
+                "10",
+                "0",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectHeightTween2"
+              },
+              "parameters": [
+                "Line",
+                "Tween",
+                "\"a\"",
+                "1500",
+                "\"easeInQuad\"",
+                "1",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectAngleTween2"
+              },
+              "parameters": [
+                "Line",
+                "Tween",
+                "\"\"",
+                "90",
+                "\"easeInQuad\"",
+                "1",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySound"
+              },
+              "parameters": [
+                "",
+                "New sound effect",
+                "",
+                "Settings.Sounds",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "PushScene"
+              },
+              "parameters": [
+                "",
+                "\"Battle\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "FadeSoundVolume"
+              },
+              "parameters": [
+                "",
+                "10",
+                "Settings.Music",
+                "1"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                  },
+                  "parameters": [
+                    "Line",
+                    "Tween",
+                    "\"aaa\"",
+                    "0",
+                    "\"linear\"",
+                    "1",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TopDownMovementBehavior::IgnoreDefaultControls"
+                  },
+                  "parameters": [
+                    "Player",
+                    "TopDownMovement",
+                    "no"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -1758,25 +2049,6 @@
       "actions": []
     },
     {
-      "disabled": true,
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": [
-        {
-          "type": {
-            "value": "Create"
-          },
-          "parameters": [
-            "",
-            "Screenshot",
-            "(Player.X()*2.5)-880",
-            "(Player.X()*2.5)-1162",
-            "\"Layer\""
-          ]
-        }
-      ]
-    },
-    {
       "colorB": 228,
       "colorG": 176,
       "colorR": 74,
@@ -1786,6 +2058,76 @@
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextReleased"
+              },
+              "parameters": [
+                "",
+                "\"Space\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenCameraZoom2"
+              },
+              "parameters": [
+                "Ball",
+                "\"asasas\"",
+                "4",
+                "",
+                "\"linear\"",
+                "2"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextReleased"
+              },
+              "parameters": [
+                "",
+                "\"Space\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::PauseAnimation"
+              },
+              "parameters": [
+                "Player",
+                "Animation"
+              ]
+            },
+            {
+              "type": {
+                "value": "TopDownMovementBehavior::IgnoreDefaultControls"
+              },
+              "parameters": [
+                "Player",
+                "TopDownMovement",
+                "yes"
+              ]
+            }
+          ]
+        },
         {
           "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
@@ -2157,6 +2499,7 @@
           ]
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -2583,94 +2926,6 @@
       "parameters": []
     },
     {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "KeyFromTextReleased"
-          },
-          "parameters": [
-            "",
-            "\"Space\""
-          ]
-        },
-        {
-          "type": {
-            "value": "BuiltinCommonInstructions::Once"
-          },
-          "parameters": []
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "AnimatableCapability::AnimatableBehavior::PauseAnimation"
-          },
-          "parameters": [
-            "Player",
-            "Animation"
-          ]
-        },
-        {
-          "type": {
-            "value": "TopDownMovementBehavior::IgnoreDefaultControls"
-          },
-          "parameters": [
-            "Player",
-            "TopDownMovement",
-            "yes"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": [
-        {
-          "type": {
-            "value": "SetLayerEffectParameter"
-          },
-          "parameters": [
-            "",
-            "\"Ground\"",
-            "\"Battle\"",
-            "\"scale\"",
-            "Scale"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "KeyFromTextReleased"
-          },
-          "parameters": [
-            "",
-            "\"Space\""
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "Tween::TweenCameraZoom2"
-          },
-          "parameters": [
-            "Ball",
-            "\"asasas\"",
-            "4",
-            "",
-            "\"linear\"",
-            "2"
-          ]
-        }
-      ]
-    },
-    {
       "colorB": 228,
       "colorG": 176,
       "colorR": 74,
@@ -2905,487 +3160,6 @@
         }
       ],
       "parameters": []
-    },
-    {
-      "folded": true,
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "CollisionNP"
-          },
-          "parameters": [
-            "Player",
-            "Enemy",
-            "",
-            "",
-            ""
-          ]
-        }
-      ],
-      "actions": [],
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "TopDownMovementBehavior::IgnoreDefaultControls"
-              },
-              "parameters": [
-                "Player",
-                "TopDownMovement",
-                "yes"
-              ]
-            },
-            {
-              "type": {
-                "value": "ActivateBehavior"
-              },
-              "parameters": [
-                "Enemy",
-                "Pathfinding",
-                "yes"
-              ]
-            },
-            {
-              "type": {
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "Line",
-                "Player.X()",
-                "Player.Y()",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "ResizableCapability::ResizableBehavior::SetHeight"
-              },
-              "parameters": [
-                "Line",
-                "Resizable",
-                "=",
-                "10"
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::TweenBehavior::AddObjectWidthTween2"
-              },
-              "parameters": [
-                "Line",
-                "Tween",
-                "\"a\"",
-                "2500",
-                "\"linear\"",
-                "1",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "PlaySound"
-              },
-              "parameters": [
-                "",
-                "Enter",
-                "",
-                "Settings.Sounds",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FadeSoundVolume"
-              },
-              "parameters": [
-                "",
-                "10",
-                "0",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "Wait"
-              },
-              "parameters": [
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::TweenBehavior::AddObjectHeightTween2"
-              },
-              "parameters": [
-                "Line",
-                "Tween",
-                "\"a\"",
-                "1500",
-                "\"easeInQuad\"",
-                "1",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::TweenBehavior::AddObjectAngleTween2"
-              },
-              "parameters": [
-                "Line",
-                "Tween",
-                "\"\"",
-                "90",
-                "\"easeInQuad\"",
-                "1",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "PlaySound"
-              },
-              "parameters": [
-                "",
-                "New sound effect",
-                "",
-                "Settings.Sounds",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Wait"
-              },
-              "parameters": [
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "PushScene"
-              },
-              "parameters": [
-                "",
-                "\"Battle\""
-              ]
-            },
-            {
-              "type": {
-                "value": "Wait"
-              },
-              "parameters": [
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "FadeSoundVolume"
-              },
-              "parameters": [
-                "",
-                "10",
-                "Settings.Music",
-                "1"
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
-                  },
-                  "parameters": [
-                    "Line",
-                    "Tween",
-                    "\"aaa\"",
-                    "0",
-                    "\"linear\"",
-                    "1",
-                    "yes"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "TopDownMovementBehavior::IgnoreDefaultControls"
-                  },
-                  "parameters": [
-                    "Player",
-                    "TopDownMovement",
-                    "no"
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "disabled": true,
-      "folded": true,
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "CollisionNP"
-          },
-          "parameters": [
-            "Player",
-            "Enemy",
-            "",
-            "",
-            ""
-          ]
-        }
-      ],
-      "actions": [],
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "TopDownMovementBehavior::IgnoreDefaultControls"
-              },
-              "parameters": [
-                "Player",
-                "TopDownMovement",
-                "yes"
-              ]
-            },
-            {
-              "type": {
-                "value": "ActivateBehavior"
-              },
-              "parameters": [
-                "Enemy",
-                "Pathfinding",
-                "yes"
-              ]
-            },
-            {
-              "type": {
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "Line",
-                "Player.X()",
-                "Player.Y()",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "ResizableCapability::ResizableBehavior::SetHeight"
-              },
-              "parameters": [
-                "Line",
-                "Resizable",
-                "=",
-                "10"
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::TweenBehavior::AddObjectWidthTween2"
-              },
-              "parameters": [
-                "Line",
-                "Tween",
-                "\"a\"",
-                "2500",
-                "\"linear\"",
-                "1",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "PlaySound"
-              },
-              "parameters": [
-                "",
-                "Battle Intro NOT OG.wav",
-                "",
-                "Settings.Sounds",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "FadeSoundVolume"
-              },
-              "parameters": [
-                "",
-                "10",
-                "0",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "Wait"
-              },
-              "parameters": [
-                "1.2"
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::TweenBehavior::AddObjectHeightTween2"
-              },
-              "parameters": [
-                "Line",
-                "Tween",
-                "\"a\"",
-                "1500",
-                "\"easeInQuad\"",
-                "1",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Tween::TweenBehavior::AddObjectAngleTween2"
-              },
-              "parameters": [
-                "Line",
-                "Tween",
-                "\"\"",
-                "90",
-                "\"easeInQuad\"",
-                "1",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Wait"
-              },
-              "parameters": [
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "PushScene"
-              },
-              "parameters": [
-                "",
-                "\"Battle\""
-              ]
-            },
-            {
-              "type": {
-                "value": "Wait"
-              },
-              "parameters": [
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "FadeSoundVolume"
-              },
-              "parameters": [
-                "",
-                "10",
-                "Settings.Music",
-                "1"
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
-                  },
-                  "parameters": [
-                    "Line",
-                    "Tween",
-                    "\"aaa\"",
-                    "0",
-                    "\"linear\"",
-                    "1",
-                    "yes"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "TopDownMovementBehavior::IgnoreDefaultControls"
-                  },
-                  "parameters": [
-                    "Player",
-                    "TopDownMovement",
-                    "no"
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": [
-        {
-          "type": {
-            "value": "MettreXY"
-          },
-          "parameters": [
-            "Line",
-            "=",
-            "Player.X()",
-            "=",
-            "Player.Y()"
-          ]
-        }
-      ]
     },
     {
       "colorB": 228,
@@ -5519,32 +5293,6 @@
       "parameters": []
     },
     {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [],
-      "actions": [
-        {
-          "type": {
-            "value": "SeparateFromObjects"
-          },
-          "parameters": [
-            "Player",
-            "MapColider",
-            ""
-          ]
-        },
-        {
-          "type": {
-            "value": "SeparateFromObjects"
-          },
-          "parameters": [
-            "Player",
-            "Map",
-            ""
-          ]
-        }
-      ]
-    },
-    {
       "colorB": 228,
       "colorG": 176,
       "colorR": 74,
@@ -5553,6 +5301,712 @@
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "Team_Bool",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "folded": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "TEAM.Name",
+                    "=",
+                    "\"Kat\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "Team_Bool",
+                        "False",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Accesory",
+                        "=",
+                        "Characters.Character_Kat.Accessory"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Armor",
+                        "=",
+                        "Characters.Character_Kat.Armor"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Attack",
+                        "=",
+                        "Characters.Character_Kat.Attack"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Defense",
+                        "=",
+                        "Characters.Character_Kat.Defense"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.EXP",
+                        "=",
+                        "Characters.Character_Kat.EXP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.LV",
+                        "=",
+                        "Characters.Character_Kat.LV"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.MagicATK",
+                        "=",
+                        "Characters.Character_Kat.MagicATK"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.MagicDEF",
+                        "=",
+                        "Characters.Character_Kat.MagicDEF"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.MAXEP",
+                        "=",
+                        "Characters.Character_Kat.MAXEP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.MAXHP",
+                        "=",
+                        "Characters.Character_Kat.MAXHP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Overworld_Stats.EP",
+                        "=",
+                        "Characters.Character_Kat.Overworld_Stats.EP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Overworld_Stats.HP",
+                        "=",
+                        "Characters.Character_Kat.Overworld_Stats.HP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Weapon",
+                        "=",
+                        "Characters.Character_Kat.Weapon"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "folded": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "TEAM.Name",
+                    "=",
+                    "\"Leo\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "Team_Bool",
+                        "False",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Accesory",
+                        "=",
+                        "Characters.Character_Leo.Accessory"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Armor",
+                        "=",
+                        "Characters.Character_Leo.Armor"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Attack",
+                        "=",
+                        "Characters.Character_Leo.Attack"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Defense",
+                        "=",
+                        "Characters.Character_Leo.Defense"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.EXP",
+                        "=",
+                        "Characters.Character_Leo.EXP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.LV",
+                        "=",
+                        "Characters.Character_Leo.LV"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.MagicATK",
+                        "=",
+                        "Characters.Character_Leo.MagicATK"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.MagicDEF",
+                        "=",
+                        "Characters.Character_Leo.MagicDEF"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.MAXEP",
+                        "=",
+                        "Characters.Character_Leo.MAXEP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.MAXHP",
+                        "=",
+                        "Characters.Character_Leo.MAXHP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Overworld_Stats.EP",
+                        "=",
+                        "Characters.Character_Leo.Overworld_Stats.EP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Overworld_Stats.HP",
+                        "=",
+                        "Characters.Character_Leo.Overworld_Stats.HP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Weapon",
+                        "=",
+                        "Characters.Character_Leo.Weapon"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "folded": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "TEAM.Name",
+                    "=",
+                    "\"Roman\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "Team_Bool",
+                        "False",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Accesory",
+                        "=",
+                        "Characters.Character_Roman.Accessory"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Armor",
+                        "=",
+                        "Characters.Character_Roman.Armor"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Attack",
+                        "=",
+                        "Characters.Character_Roman.Attack"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Defense",
+                        "=",
+                        "Characters.Character_Roman.Defense"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.EXP",
+                        "=",
+                        "Characters.Character_Roman.EXP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.LV",
+                        "=",
+                        "Characters.Character_Roman.LV"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.MagicATK",
+                        "=",
+                        "Characters.Character_Roman.MagicATK"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.MagicDEF",
+                        "=",
+                        "Characters.Character_Roman.MagicDEF"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.MAXEP",
+                        "=",
+                        "Characters.Character_Roman.MAXEP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.MAXHP",
+                        "=",
+                        "Characters.Character_Roman.MAXHP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Overworld_Stats.EP",
+                        "=",
+                        "Characters.Character_Roman.Overworld_Stats.EP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Overworld_Stats.HP",
+                        "=",
+                        "Characters.Character_Roman.Overworld_Stats.HP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Weapon",
+                        "=",
+                        "Characters.Character_Roman.Weapon"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "folded": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "TEAM.Name",
+                    "=",
+                    "\"Melody\""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "Team_Bool",
+                        "False",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Accesory",
+                        "=",
+                        "Characters.Character_Melody.Accessory"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Armor",
+                        "=",
+                        "Characters.Character_Melody.Armor"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Attack",
+                        "=",
+                        "Characters.Character_Melody.Attack"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Defense",
+                        "=",
+                        "Characters.Character_Melody.Defense"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.EXP",
+                        "=",
+                        "Characters.Character_Melody.EXP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.LV",
+                        "=",
+                        "Characters.Character_Melody.LV"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.MagicATK",
+                        "=",
+                        "Characters.Character_Melody.MagicATK"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.MagicDEF",
+                        "=",
+                        "Characters.Character_Melody.MagicDEF"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.MAXEP",
+                        "=",
+                        "Characters.Character_Melody.MAXEP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.MAXHP",
+                        "=",
+                        "Characters.Character_Melody.MAXHP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Overworld_Stats.EP",
+                        "=",
+                        "Characters.Character_Melody.Overworld_Stats.EP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Overworld_Stats.HP",
+                        "=",
+                        "Characters.Character_Melody.Overworld_Stats.HP"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "TEAM.Weapon",
+                        "=",
+                        "Characters.Character_Melody.Weapon"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
@@ -5574,56 +6028,759 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "VariableChildExists2"
+                    "value": "BuiltinCommonInstructions::Once"
                   },
-                  "parameters": [
-                    "Characters",
-                    "\"Characters.Character_\"+Party_Members[0]"
-                  ]
+                  "parameters": []
                 }
               ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "EcrireFichierTxt"
-                  },
-                  "parameters": [
-                    "\"Party_Teammates\"",
-                    "\"1\"",
-                    ""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
               "actions": [
                 {
                   "type": {
                     "value": "SetStringVariable"
                   },
                   "parameters": [
-                    "TEAM",
+                    "TEAM.Name",
                     "=",
-                    "\"Characters.Character_\"+Party_Members[0]"
+                    "Party_Members[0]"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "Team_Bool",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "0.1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player.Accessory",
+                    "=",
+                    "TEAM.Accessory"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player.Armor",
+                    "=",
+                    "TEAM.Armor"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player.Attack",
+                    "=",
+                    "TEAM.Attack"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player.Defense",
+                    "=",
+                    "TEAM.Defense"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player.EXP",
+                    "=",
+                    "TEAM.EXP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player.LV",
+                    "=",
+                    "TEAM.LV"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player.MagicATK",
+                    "=",
+                    "TEAM.MagicATK"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player.MagicDEF",
+                    "=",
+                    "TEAM.MagicDEF"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player.MAXEP",
+                    "=",
+                    "TEAM.MAXEP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player.MAXHP",
+                    "=",
+                    "TEAM.MAXHP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player.Overworld_Stats.EP",
+                    "=",
+                    "TEAM.Overworld_Stats.EP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player.Overworld_Stats.HP",
+                    "=",
+                    "TEAM.Overworld_Stats.HP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player.Weapon",
+                    "=",
+                    "TEAM.Weapon"
                   ]
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
             {
-              "disabled": true,
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "Party_Members[1]",
+                "!=",
+                "\"\""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
               "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
               "actions": [
                 {
                   "type": {
-                    "value": "EcrireFichierTxt"
+                    "value": "Wait"
                   },
                   "parameters": [
-                    "\"TEAM\"",
-                    "\"1\"",
-                    "\"Characters.Character_\"+Party_Members[0]"
+                    "0.1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "TEAM.Name",
+                    "=",
+                    "Party_Members[1]"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "Team_Bool",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "0.1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player2.Accessory",
+                    "=",
+                    "TEAM.Accessory"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player2.Armor",
+                    "=",
+                    "TEAM.Armor"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player2.Attack",
+                    "=",
+                    "TEAM.Attack"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player2.Defense",
+                    "=",
+                    "TEAM.Defense"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player2.EXP",
+                    "=",
+                    "TEAM.EXP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player2.LV",
+                    "=",
+                    "TEAM.LV"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player2.MagicATK",
+                    "=",
+                    "TEAM.MagicATK"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player2.MagicDEF",
+                    "=",
+                    "TEAM.MagicDEF"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player2.MAXEP",
+                    "=",
+                    "TEAM.MAXEP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player2.MAXHP",
+                    "=",
+                    "TEAM.MAXHP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player2.Overworld_Stats.EP",
+                    "=",
+                    "TEAM.Overworld_Stats.EP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player2.Overworld_Stats.HP",
+                    "=",
+                    "TEAM.Overworld_Stats.HP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player2.Weapon",
+                    "=",
+                    "TEAM.Weapon"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "Party_Members[2]",
+                "!=",
+                "\"\""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "0.2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "TEAM.Name",
+                    "=",
+                    "Party_Members[2]"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "Team_Bool",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "0.1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player3.Accessory",
+                    "=",
+                    "TEAM.Accessory"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player3.Armor",
+                    "=",
+                    "TEAM.Armor"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player3.Attack",
+                    "=",
+                    "TEAM.Attack"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player3.Defense",
+                    "=",
+                    "TEAM.Defense"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player3.EXP",
+                    "=",
+                    "TEAM.EXP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player3.LV",
+                    "=",
+                    "TEAM.LV"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player3.MagicATK",
+                    "=",
+                    "TEAM.MagicATK"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player3.MagicDEF",
+                    "=",
+                    "TEAM.MagicDEF"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player3.MAXEP",
+                    "=",
+                    "TEAM.MAXEP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player3.MAXHP",
+                    "=",
+                    "TEAM.MAXHP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player3.Overworld_Stats.EP",
+                    "=",
+                    "TEAM.Overworld_Stats.EP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player3.Overworld_Stats.HP",
+                    "=",
+                    "TEAM.Overworld_Stats.HP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player3.Weapon",
+                    "=",
+                    "TEAM.Weapon"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "Party_Members[3]",
+                "!=",
+                "\"\""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "0.3"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "TEAM.Name",
+                    "=",
+                    "Party_Members[3]"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "Team_Bool",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "0.1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player4.Accessory",
+                    "=",
+                    "TEAM.Accessory"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player4.Armor",
+                    "=",
+                    "TEAM.Armor"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player4.Attack",
+                    "=",
+                    "TEAM.Attack"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player4.Defense",
+                    "=",
+                    "TEAM.Defense"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player4.EXP",
+                    "=",
+                    "TEAM.EXP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player4.LV",
+                    "=",
+                    "TEAM.LV"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player4.MagicATK",
+                    "=",
+                    "TEAM.MagicATK"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player4.MagicDEF",
+                    "=",
+                    "TEAM.MagicDEF"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player4.MAXEP",
+                    "=",
+                    "TEAM.MAXEP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player4.MAXHP",
+                    "=",
+                    "TEAM.MAXHP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player4.Overworld_Stats.EP",
+                    "=",
+                    "TEAM.Overworld_Stats.EP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player4.Overworld_Stats.HP",
+                    "=",
+                    "TEAM.Overworld_Stats.HP"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "TeamStatsPlayers.Player4.Weapon",
+                    "=",
+                    "TEAM.Weapon"
                   ]
                 }
               ]

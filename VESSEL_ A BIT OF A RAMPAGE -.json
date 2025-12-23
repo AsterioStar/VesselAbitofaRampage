@@ -1,7 +1,7 @@
 {
   "firstLayout": "Battle",
   "gdVersion": {
-    "build": 249,
+    "build": 250,
     "major": 5,
     "minor": 6,
     "revision": 0
@@ -5778,6 +5778,14 @@
         "preloadAsSound": false,
         "preloadInCache": false,
         "userAdded": false
+      },
+      {
+        "file": "assets/None16.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "None16",
+        "smoothed": false,
+        "userAdded": false
       }
     ]
   },
@@ -5886,6 +5894,130 @@
               ]
             },
             {
+              "folded": true,
+              "name": "SPELLS",
+              "type": "structure",
+              "children": [
+                {
+                  "folded": true,
+                  "name": "Attack",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "name": "Mending",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "name": "Support",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "name": "Weapon",
               "type": "string",
               "value": "Rusty Penknife"
@@ -5965,6 +6097,130 @@
               ]
             },
             {
+              "folded": true,
+              "name": "SPELLS",
+              "type": "structure",
+              "children": [
+                {
+                  "folded": true,
+                  "name": "Attack",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "name": "Mending",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "name": "Support",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "name": "Weapon",
               "type": "string",
               "value": "Leather Gloves"
@@ -6004,7 +6260,7 @@
             {
               "name": "LV",
               "type": "number",
-              "value": 99
+              "value": 1
             },
             {
               "name": "MAXEP",
@@ -6044,6 +6300,130 @@
               ]
             },
             {
+              "folded": true,
+              "name": "SPELLS",
+              "type": "structure",
+              "children": [
+                {
+                  "folded": true,
+                  "name": "Attack",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "name": "Mending",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "name": "Support",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "name": "Weapon",
               "type": "string",
               "value": "Old Guitar"
@@ -6051,7 +6431,6 @@
           ]
         },
         {
-          "folded": true,
           "name": "Character_Roman",
           "type": "structure",
           "children": [
@@ -6119,6 +6498,130 @@
                   "name": "HP",
                   "type": "number",
                   "value": 999
+                }
+              ]
+            },
+            {
+              "folded": true,
+              "name": "SPELLS",
+              "type": "structure",
+              "children": [
+                {
+                  "folded": true,
+                  "name": "Attack",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "name": "Mending",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "name": "Support",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
                 }
               ]
             },
@@ -6261,6 +6764,825 @@
       "name": "Battle",
       "type": "string",
       "value": "None"
+    },
+    {
+      "folded": true,
+      "name": "TeamStatsPlayers",
+      "type": "structure",
+      "children": [
+        {
+          "folded": true,
+          "name": "Player",
+          "type": "structure",
+          "children": [
+            {
+              "name": "Accessory",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "Armor",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "Attack",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "Defense",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "EXP",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "LV",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "MAXEP",
+              "type": "number",
+              "value": 10
+            },
+            {
+              "name": "MAXHP",
+              "type": "number",
+              "value": 10
+            },
+            {
+              "name": "MagicATK",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "MagicDEF",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "folded": true,
+              "name": "Overworld_Stats",
+              "type": "structure",
+              "children": [
+                {
+                  "name": "EP",
+                  "type": "number",
+                  "value": 999
+                },
+                {
+                  "name": "HP",
+                  "type": "number",
+                  "value": 999
+                }
+              ]
+            },
+            {
+              "folded": true,
+              "name": "SPELLS",
+              "type": "structure",
+              "children": [
+                {
+                  "folded": true,
+                  "name": "Attack",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "name": "Mending",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "name": "Support",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Weapon",
+              "type": "string",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "folded": true,
+          "name": "Player2",
+          "type": "structure",
+          "children": [
+            {
+              "name": "Accessory",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "Armor",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "Attack",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "Defense",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "EXP",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "LV",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "MAXEP",
+              "type": "number",
+              "value": 10
+            },
+            {
+              "name": "MAXHP",
+              "type": "number",
+              "value": 10
+            },
+            {
+              "name": "MagicATK",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "MagicDEF",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "folded": true,
+              "name": "Overworld_Stats",
+              "type": "structure",
+              "children": [
+                {
+                  "name": "EP",
+                  "type": "number",
+                  "value": 999
+                },
+                {
+                  "name": "HP",
+                  "type": "number",
+                  "value": 999
+                }
+              ]
+            },
+            {
+              "folded": true,
+              "name": "SPELLS",
+              "type": "structure",
+              "children": [
+                {
+                  "folded": true,
+                  "name": "Attack",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "name": "Mending",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "name": "Support",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Weapon",
+              "type": "string",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "folded": true,
+          "name": "Player3",
+          "type": "structure",
+          "children": [
+            {
+              "name": "Accessory",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "Armor",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "Attack",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "Defense",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "EXP",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "LV",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "MAXEP",
+              "type": "number",
+              "value": 10
+            },
+            {
+              "name": "MAXHP",
+              "type": "number",
+              "value": 10
+            },
+            {
+              "name": "MagicATK",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "MagicDEF",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "folded": true,
+              "name": "Overworld_Stats",
+              "type": "structure",
+              "children": [
+                {
+                  "name": "EP",
+                  "type": "number",
+                  "value": 999
+                },
+                {
+                  "name": "HP",
+                  "type": "number",
+                  "value": 999
+                }
+              ]
+            },
+            {
+              "folded": true,
+              "name": "SPELLS",
+              "type": "structure",
+              "children": [
+                {
+                  "folded": true,
+                  "name": "Attack",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "name": "Mending",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "name": "Support",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Weapon",
+              "type": "string",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "folded": true,
+          "name": "Player4",
+          "type": "structure",
+          "children": [
+            {
+              "name": "Accessory",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "Armor",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "Attack",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "Defense",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "EXP",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "LV",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "MAXEP",
+              "type": "number",
+              "value": 10
+            },
+            {
+              "name": "MAXHP",
+              "type": "number",
+              "value": 10
+            },
+            {
+              "name": "MagicATK",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "MagicDEF",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "folded": true,
+              "name": "Overworld_Stats",
+              "type": "structure",
+              "children": [
+                {
+                  "name": "EP",
+                  "type": "number",
+                  "value": 999
+                },
+                {
+                  "name": "HP",
+                  "type": "number",
+                  "value": 999
+                }
+              ]
+            },
+            {
+              "folded": true,
+              "name": "SPELLS",
+              "type": "structure",
+              "children": [
+                {
+                  "folded": true,
+                  "name": "Attack",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "name": "Mending",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "name": "Support",
+                  "type": "array",
+                  "children": [
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    },
+                    {
+                      "type": "string",
+                      "value": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Weapon",
+              "type": "string",
+              "value": ""
+            }
+          ]
+        }
+      ]
     }
   ],
   "layouts": [
