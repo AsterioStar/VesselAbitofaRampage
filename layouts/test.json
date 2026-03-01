@@ -20,9 +20,10 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.6244537826599991,
+    "zoomFactor": 0.4057518905943834,
     "windowMask": false,
-    "selectedLayer": ""
+    "selectedLayer": "",
+    "gameEditorMode": "instances-editor"
   },
   "objectsGroups": [],
   "variables": [
@@ -42,6 +43,7 @@
       "value": 0
     },
     {
+      "folded": true,
       "name": "position_Target",
       "type": "structure",
       "children": [
@@ -56,6 +58,51 @@
           "value": 300
         }
       ]
+    },
+    {
+      "name": "FightVariation",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "FightLimit",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "FightPower",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "MUSICAL",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "HIT_Tempo",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "COMBO",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "PartBeat",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "Tempo",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "MusicReboot",
+      "type": "boolean",
+      "value": false
     }
   ],
   "instances": [
@@ -84,8 +131,8 @@
       "name": "Point",
       "persistentUuid": "1dab1051-e386-4122-8190-02a67169d577",
       "width": 0,
-      "x": 640,
-      "y": 394,
+      "x": 1003,
+      "y": 278,
       "zOrder": 2,
       "numberProperties": [],
       "stringProperties": [],
@@ -129,27 +176,11 @@
       "height": 0,
       "keepRatio": true,
       "layer": "",
-      "name": "Bash",
-      "persistentUuid": "056c6e64-888c-435d-9816-31abf29abe91",
-      "width": 0,
-      "x": 619,
-      "y": 545,
-      "zOrder": 5,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "keepRatio": true,
-      "layer": "",
       "name": "Heat",
       "persistentUuid": "564dfa86-2d6e-4580-97ae-9b628773ce0f",
       "width": 0,
-      "x": 956,
-      "y": 371,
+      "x": 1125,
+      "y": 626,
       "zOrder": 6,
       "numberProperties": [],
       "stringProperties": [],
@@ -161,11 +192,11 @@
       "height": 0,
       "keepRatio": true,
       "layer": "",
-      "name": "NewSprite",
+      "name": "position_Target2",
       "persistentUuid": "becf7a07-ecb5-47cf-839c-fb6f5271ef9a",
       "width": 0,
-      "x": 600,
-      "y": 111,
+      "x": 633,
+      "y": 318,
       "zOrder": 7,
       "numberProperties": [],
       "stringProperties": [],
@@ -173,16 +204,15 @@
     },
     {
       "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 252,
+      "customSize": false,
+      "height": 0,
       "keepRatio": true,
       "layer": "",
-      "name": "Inventory2",
-      "persistentUuid": "e6e703fc-05fd-41a4-9c19-4d2d092cc960",
-      "width": 280,
-      "x": 332,
-      "y": 261,
+      "name": "Mother_Counter",
+      "persistentUuid": "089c3476-f97c-4c1b-9423-a47c71c50309",
+      "width": 0,
+      "x": 374,
+      "y": -67,
       "zOrder": 8,
       "numberProperties": [],
       "stringProperties": [],
@@ -190,17 +220,32 @@
     },
     {
       "angle": 0,
-      "customSize": true,
-      "depth": 1,
-      "height": 182,
+      "customSize": false,
+      "height": 0,
       "keepRatio": true,
       "layer": "",
-      "name": "Inventory3",
-      "persistentUuid": "2c749f95-0d8f-40aa-b949-2d73a3b71c5b",
-      "width": 439,
-      "x": 677,
-      "y": 260,
+      "name": "STAR",
+      "persistentUuid": "e6a65d24-63e7-4696-9b27-a6b3c3994e5b",
+      "width": 0,
+      "x": 1331,
+      "y": 444,
       "zOrder": 9,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "NewParticlesEmitter",
+      "persistentUuid": "857879a7-ad36-4bd2-b1cf-2c8abcb90117",
+      "width": 0,
+      "x": 633,
+      "y": 403,
+      "zOrder": 10,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -327,11 +372,24 @@
     {
       "adaptCollisionMaskAutomatically": true,
       "assetStoreId": "",
-      "name": "NewSprite",
+      "name": "position_Target2",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "Beat",
+          "doubleParameters": {
+            "padding": 0,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "255;255;255"
+          },
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [
         {
           "name": "Destruir Fuera",
@@ -1568,6 +1626,1220 @@
         "lineHeight": 0,
         "color": "0;0;0"
       }
+    },
+    {
+      "assetStoreId": "bfeeb465a4a164b560a2215e3ff9e78e66123af43cbf7ef1f22d56fca4271c80",
+      "name": "FightBar",
+      "type": "PanelSpriteSlider::PanelSpriteSlider",
+      "variant": "Fight Bar",
+      "variables": [
+        {
+          "name": "Power",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MinigameON",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "name": "Active",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "name": "Speed",
+          "type": "number",
+          "value": 0.5
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "content": {
+        "BarTopPadding": 6,
+        "BarLeftPadding": 6,
+        "BarRightPadding": 6,
+        "BarBottomPadding": 6,
+        "LabelMargin": 6,
+        "StepSize": 1,
+        "ShowLabelAtChanges": true,
+        "InitialValue": 0,
+        "MaxValue": 180
+      }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Arrows",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "Power",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MinigameON",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "Frame",
+          "type": "number",
+          "value": 1
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "Up",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite117",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Right",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Up",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Down",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite115",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Left",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite116",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "ArrowQTE",
+      "type": "PrimitiveDrawing::Drawer",
+      "variables": [
+        {
+          "name": "Variable",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MinigameON",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "Radio",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "fillOpacity": 0,
+      "outlineSize": 7,
+      "outlineOpacity": 255,
+      "absoluteCoordinates": false,
+      "clearBetweenFrames": true,
+      "antialiasing": "none",
+      "fillColor": {
+        "r": 255,
+        "g": 255,
+        "b": 255
+      },
+      "outlineColor": {
+        "r": 252,
+        "g": 255,
+        "b": 0
+      }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "QTEArrow",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "NewSprite2",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite118",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "STAR",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "EllipseMovement",
+          "type": "EllipseMovement::EllipseMovement",
+          "RadiusX": 300,
+          "RadiusY": 50,
+          "LoopDuration": 1,
+          "InitialTurningLeft": false,
+          "InitialDirectionAngle": 0,
+          "ShouldRotate": false,
+          "RotationOffset": 20,
+          "CenterX": 0,
+          "CenterY": 0,
+          "MovementAngle": 0,
+          "OldX": 2.0247e-320,
+          "OldY": 2.0247e-320
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "Star",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Star2",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 22,
+                        "y": 13
+                      },
+                      {
+                        "x": 41,
+                        "y": 13
+                      },
+                      {
+                        "x": 41,
+                        "y": 51
+                      },
+                      {
+                        "x": 22,
+                        "y": 51
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "additive": false,
+      "assetStoreId": "",
+      "destroyWhenNoParticles": true,
+      "emitterAngleA": 0,
+      "emitterAngleB": 90,
+      "emitterForceMax": 85,
+      "emitterForceMin": 45,
+      "flow": 45,
+      "jumpForwardInTimeOnCreation": 0,
+      "maxParticleNb": 300,
+      "name": "NewParticlesEmitter",
+      "particleAlpha1": 204,
+      "particleAlpha2": 0,
+      "particleAlphaRandomness1": 0,
+      "particleAlphaRandomness2": 0,
+      "particleAngle1": 0,
+      "particleAngle2": 0,
+      "particleAngleRandomness1": 0,
+      "particleAngleRandomness2": 0,
+      "particleBlue1": 51,
+      "particleBlue2": 0,
+      "particleColor1": "255;51;51",
+      "particleColor2": "255;255;0",
+      "particleGravityX": 0,
+      "particleGravityY": 0,
+      "particleGreen1": 51,
+      "particleGreen2": 255,
+      "particleLifeTimeMax": 2.5,
+      "particleLifeTimeMin": 0.5,
+      "particleRed1": 255,
+      "particleRed2": 255,
+      "particleSize1": 100,
+      "particleSize2": 100,
+      "particleSizeRandomness1": 0,
+      "particleSizeRandomness2": 0,
+      "rendererParam1": 3,
+      "rendererParam2": 1,
+      "rendererType": "Point",
+      "tank": -1,
+      "textureParticleName": "",
+      "type": "ParticleSystem::ParticleEmitter",
+      "zoneRadius": 3,
+      "variables": [],
+      "effects": [
+        {
+          "effectType": "Shockwave",
+          "name": "Effect",
+          "doubleParameters": {
+            "amplitude": 50,
+            "brightness": 1,
+            "centerX": 0.5,
+            "centerY": 0.5,
+            "radius": 0,
+            "speed": 500,
+            "time": 0,
+            "wavelength": 200
+          },
+          "stringParameters": {},
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": []
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Arrows2",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "Power",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MinigameON",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "Frame",
+          "type": "number",
+          "value": 1
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "Up",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite117",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Right",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Up",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Down",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite115",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Left",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite116",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Arrows3",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "Power",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MinigameON",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "Frame",
+          "type": "number",
+          "value": 1
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "Up",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite117",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Right",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Up",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Down",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite115",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Left",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite116",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "Arrows4",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "Power",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "MinigameON",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "Frame",
+          "type": "number",
+          "value": 1
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "Up",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite117",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Right",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "Up",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Down",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite115",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Left",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "NewSprite116",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "objectsFolderStructure": {
@@ -1592,7 +2864,10 @@
         "objectName": "Point3"
       },
       {
-        "objectName": "NewSprite"
+        "objectName": "position_Target2"
+      },
+      {
+        "objectName": "STAR"
       },
       {
         "objectName": "Wave"
@@ -1620,10 +2895,274 @@
       },
       {
         "objectName": "Inventory3"
+      },
+      {
+        "objectName": "FightBar"
+      },
+      {
+        "objectName": "Arrows"
+      },
+      {
+        "objectName": "Arrows2"
+      },
+      {
+        "objectName": "Arrows3"
+      },
+      {
+        "objectName": "Arrows4"
+      },
+      {
+        "objectName": "ArrowQTE"
+      },
+      {
+        "objectName": "QTEArrow"
+      },
+      {
+        "objectName": "NewParticlesEmitter"
       }
     ]
   },
   "events": [
+    {
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "ZoomCamera"
+          },
+          "parameters": [
+            "",
+            "1",
+            "\"Dialogue\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "ZoomCamera"
+          },
+          "parameters": [
+            "",
+            "1",
+            "\"UI\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Wait"
+          },
+          "parameters": [
+            "0.1"
+          ]
+        },
+        {
+          "type": {
+            "value": "ZoomCamera"
+          },
+          "parameters": [
+            "",
+            "5",
+            "\"UI\"",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenCameraZoom2"
+          },
+          "parameters": [
+            "",
+            "\"camra\"",
+            "1",
+            "\"UI\"",
+            "\"easeInOutExpo\"",
+            "0.01"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenCameraZoom2"
+          },
+          "parameters": [
+            "",
+            "\"camara\"",
+            "5",
+            "",
+            "\"linear\"",
+            "0.0001"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenNumberEffectPropertyTween"
+          },
+          "parameters": [
+            "",
+            "\"7\"",
+            "0",
+            "\"Background\"",
+            "\"Effect\"",
+            "\"blur\"",
+            "\"linear\"",
+            "0.01"
+          ]
+        },
+        {
+          "type": {
+            "value": "Tween::TweenNumberEffectPropertyTween"
+          },
+          "parameters": [
+            "",
+            "\"8\"",
+            "0",
+            "",
+            "\"Effect\"",
+            "\"blur\"",
+            "\"linear\"",
+            "0.01"
+          ]
+        },
+        {
+          "type": {
+            "value": "EnableLayerEffect"
+          },
+          "parameters": [
+            "",
+            "\"UI\"",
+            "\"Effect\"",
+            "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "EnableLayerEffect"
+          },
+          "parameters": [
+            "",
+            "\"Dialogue Background\"",
+            "\"Effect\"",
+            "no"
+          ]
+        },
+        {
+          "type": {
+            "value": "EnableLayerEffect"
+          },
+          "parameters": [
+            "",
+            "\"Dialogue\"",
+            "\"Effect\"",
+            "no"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "folded": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "ZoomCamera"
+              },
+              "parameters": [
+                "",
+                "2.5",
+                "\"Dialogue Background\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ZoomCamera"
+              },
+              "parameters": [
+                "",
+                "2.5",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ZoomCamera"
+              },
+              "parameters": [
+                "",
+                "2.5",
+                "\"UI_BaseSize\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ZoomCamera"
+              },
+              "parameters": [
+                "",
+                "2.5",
+                "\"UI_BaseSizeInventory\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ZoomCamera"
+              },
+              "parameters": [
+                "",
+                "2.5",
+                "\"Background\"",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "2"
+              ]
+            },
+            {
+              "type": {
+                "value": "EnableLayerEffect"
+              },
+              "parameters": [
+                "",
+                "\"Background\"",
+                "\"Effect\"",
+                "no"
+              ]
+            },
+            {
+              "type": {
+                "value": "EnableLayerEffect"
+              },
+              "parameters": [
+                "",
+                "",
+                "\"Effect\"",
+                "no"
+              ]
+            }
+          ]
+        }
+      ]
+    },
     {
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
@@ -1674,6 +3213,7 @@
       ]
     },
     {
+      "disabled": true,
       "folded": true,
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
@@ -1787,6 +3327,7 @@
       ]
     },
     {
+      "disabled": true,
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -1819,35 +3360,2561 @@
       "actions": [
         {
           "type": {
-            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+            "value": "PanelSpriteSlider::PanelSpriteSlider::Activate"
           },
           "parameters": [
-            "Inventory2",
-            "Text",
-            "=",
-            "Characters.Character_Leo.Weapon"
-          ]
-        },
-        {
-          "type": {
-            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
-          },
-          "parameters": [
-            "Inventory3",
-            "Text",
-            "=",
-            "Inventory3.Character.Weapon"
+            "FightBar",
+            "no",
+            ""
           ]
         }
       ]
     },
     {
-      "type": "BuiltinCommonInstructions::ForEachChildVariable",
-      "iterableVariableName": "Characters",
-      "valueIteratorVariableName": "child",
-      "keyIteratorVariableName": "CharacterID",
-      "conditions": [],
-      "actions": []
+      "folded": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "KeyFromTextPressed"
+          },
+          "parameters": [
+            "",
+            "\"Space\""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "FightBar",
+                "500",
+                "350",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "FightVariation",
+                "=",
+                "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "FightLimit",
+                "=",
+                "5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "folded": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "KeyFromTextPressed"
+          },
+          "parameters": [
+            "",
+            "\"q\""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "FightBar",
+                "500",
+                "350",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "FightVariation",
+                "=",
+                "10"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "FightLimit",
+                "=",
+                "10"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "folded": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "BooleanObjectVariable"
+          },
+          "parameters": [
+            "FightBar",
+            "MinigameON",
+            "True",
+            ""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "OpacityCapability::OpacityBehavior::SetValue"
+              },
+              "parameters": [
+                "FightBar",
+                "Opacity",
+                "=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "Wait"
+              },
+              "parameters": [
+                "0.1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+              },
+              "parameters": [
+                "FightBar",
+                "Tween",
+                "\"0a\"",
+                "255",
+                "\"linear\"",
+                "0.2",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "FightBar",
+                "Active",
+                "True",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanObjectVariable"
+              },
+              "parameters": [
+                "FightBar",
+                "Active",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PanelSpriteSlider::PanelSpriteSlider::SetValue"
+              },
+              "parameters": [
+                "FightBar",
+                "+",
+                "(FightLimit+1)-(FightVariation)",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "FightVariation",
+                "<=",
+                "0"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+              },
+              "parameters": [
+                "FightBar",
+                "Tween",
+                "\"0a\"",
+                "0",
+                "\"linear\"",
+                "0.2",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "FightBar",
+                "MinigameON",
+                "False",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"z\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModPitchSoundChannel"
+              },
+              "parameters": [
+                "FightVariation",
+                "999",
+                "+",
+                "0.1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "FightVariation",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanObjectVariable"
+              },
+              "parameters": [
+                "FightBar",
+                "Active",
+                "False",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+              },
+              "parameters": [
+                "FightBar",
+                "Tween",
+                "\"q\"",
+                "FightBar.Y()+40",
+                "\"easeInCubic\"",
+                "0.2",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+              },
+              "parameters": [
+                "FightBar",
+                "Tween",
+                "\"0a\"",
+                "FightBar.Opacity::Value()-100",
+                "\"linear\"",
+                "0.2",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySoundCanal"
+              },
+              "parameters": [
+                "",
+                "New sound effect2",
+                "999",
+                "",
+                "GameData.Settings.Sounds",
+                "(FightLimit-(FightVariation*0.9))/2"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "FightVariation",
+                    ">",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "FightBar",
+                    "500",
+                    "350",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "PanelSpriteSlider::PanelSpriteSlider::Value"
+                      },
+                      "parameters": [
+                        "FightBar",
+                        "<=",
+                        "FightBar.MaxValue()/4.28",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PanelSpriteSlider::PanelSpriteSlider::Value"
+                      },
+                      "parameters": [
+                        "FightBar",
+                        ">=",
+                        "FightBar.MaxValue()-FightBar.MaxValue()/4.28",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteSlider::PanelSpriteSlider::Value"
+                  },
+                  "parameters": [
+                    "FightBar",
+                    "<=",
+                    "FightBar.MaxValue()/4.28",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteSlider::PanelSpriteSlider::Value"
+                  },
+                  "parameters": [
+                    "FightBar",
+                    ">=",
+                    "FightBar.MaxValue()-FightBar.MaxValue()/4.28",
+                    ""
+                  ]
+                }
+              ],
+              "actions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "folded": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "KeyFromTextPressed"
+          },
+          "parameters": [
+            "",
+            "\"w\""
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Arrows",
+                "436",
+                "350",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "Arrows",
+                "Power",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Arrows",
+                "500",
+                "350",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "Arrows",
+                "Power",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Arrows",
+                "564",
+                "350",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "Arrows",
+                "Power",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Arrows",
+                "628",
+                "350",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "Arrows",
+                "Power",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "Arrows",
+                "Power",
+                "+",
+                "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "FightVariation",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "FightLimit",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnimatableCapability::AnimatableBehavior::SetIndex"
+              },
+              "parameters": [
+                "Arrows",
+                "Animation",
+                "=",
+                "RandomInRange(1,4)"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "disabled": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "PreloadSound"
+          },
+          "parameters": [
+            "",
+            "boss fight theme shish (1).mp3"
+          ]
+        }
+      ]
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Combo musical",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "RepeatEveryXSeconds::Repeat"
+              },
+              "parameters": [
+                "",
+                "\"Tempo\"",
+                "Variable(Tempo)",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "HIT_Tempo",
+                "True"
+              ]
+            },
+            {
+              "type": {
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "TimeUp",
+                "+",
+                "Variable(Tempo)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextJustPressed"
+              },
+              "parameters": [
+                "",
+                "\"Num1\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlaySoundCanal"
+              },
+              "parameters": [
+                "",
+                "boss fight theme shish (1).mp3",
+                "10",
+                "yes",
+                "80",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "MusicReboot",
+                "True",
+                "8"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextJustPressed"
+              },
+              "parameters": [
+                "",
+                "\"Num2\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "MusicReboot",
+                "True",
+                "8"
+              ]
+            }
+          ]
+        },
+        {
+          "disabled": true,
+          "folded": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "MusicReboot",
+                "True"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "PartBeat",
+                    "=",
+                    "8"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "Tempo",
+                    "=",
+                    "1.2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "14"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenSceneVariableNumber3"
+                  },
+                  "parameters": [
+                    "Tempo",
+                    "\"Deeb\"",
+                    "Tempo",
+                    "1.2/2",
+                    "\"linear\"",
+                    "36"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenSceneVariableNumber3"
+                  },
+                  "parameters": [
+                    "Tempo",
+                    "\"Deem\"",
+                    "PartBeat",
+                    "6",
+                    "\"linear\"",
+                    "36"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "66.5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "PartBeat",
+                    "=",
+                    "4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "Tempo",
+                    "=",
+                    "1.2583333333333333333333333333333/4"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "RepeatEveryXSeconds::Repeat"
+                  },
+                  "parameters": [
+                    "",
+                    "\"MusicTime\"",
+                    "107",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "PartBeat",
+                    "=",
+                    "8"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "Tempo",
+                    "=",
+                    "1.2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "14"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenSceneVariableNumber3"
+                  },
+                  "parameters": [
+                    "Tempo",
+                    "\"Deeb\"",
+                    "Tempo",
+                    "1.2/2",
+                    "\"linear\"",
+                    "36"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenSceneVariableNumber3"
+                  },
+                  "parameters": [
+                    "Tempo",
+                    "\"Deem\"",
+                    "PartBeat",
+                    "6",
+                    "\"linear\"",
+                    "36"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "66.5"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "PartBeat",
+                    "=",
+                    "4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "Tempo",
+                    "=",
+                    "1.2583333333333333333333333333333/4"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "MusicReboot",
+                "True"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetSceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "Once",
+                    "True"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "PartBeat",
+                    "=",
+                    "4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "Tempo",
+                    "=",
+                    "2.5/6"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "HIT_Tempo",
+                    "True"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "Once",
+                    "True"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PlaySoundCanal"
+                  },
+                  "parameters": [
+                    "",
+                    "Fearsome Freaks.wav",
+                    "10",
+                    "yes",
+                    "80",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetSceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "Once",
+                    "False"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "MUSICAL",
+                    "False"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+                  },
+                  "parameters": [
+                    "STAR",
+                    "Tween",
+                    "\"Desvan\"",
+                    "STAR.Y()+20",
+                    "\"bounce\"",
+                    "0.5",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                  },
+                  "parameters": [
+                    "STAR",
+                    "Tween",
+                    "\"Des\"",
+                    "0",
+                    "\"linear\"",
+                    "0.7",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetSceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "Sync",
+                    "False"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "HIT_Tempo",
+                    "True"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "EffectCapability::EffectBehavior::EnableEffect"
+                  },
+                  "parameters": [
+                    "position_Target2",
+                    "Effect",
+                    "\"Beat\"",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "HIT_Tempo",
+                    "False"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "EffectCapability::EffectBehavior::EnableEffect"
+                  },
+                  "parameters": [
+                    "position_Target2",
+                    "Effect",
+                    "\"Beat\"",
+                    "no"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "MUSICAL",
+                    "False"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "TimeUp",
+                    "+",
+                    "Variable(Tempo)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "0.1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetSceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "MUSICAL",
+                    "True"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "MUSICAL",
+                    "True"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "TimeUp",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "TimeUp",
+                        "=",
+                        "Variable(Tempo)*2"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "TimeUp",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+                      },
+                      "parameters": [
+                        "STAR",
+                        "Tween",
+                        "\"Desvan\"",
+                        "STAR.Y()+20",
+                        "\"bounce\"",
+                        "0.5",
+                        "yes"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                      },
+                      "parameters": [
+                        "STAR",
+                        "Tween",
+                        "\"Des\"",
+                        "0",
+                        "\"linear\"",
+                        "0.7",
+                        "yes"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "MUSICAL",
+                        "+"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Orden",
+                        "+",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "EffectCapability::EffectBehavior::EnableEffect"
+                      },
+                      "parameters": [
+                        "position_Target2",
+                        "Effect",
+                        "\"Beat\"",
+                        "no"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "BBText::SetBBText"
+                          },
+                          "parameters": [
+                            "READY",
+                            "=",
+                            "\"COMBO:\"+VariableString(COMBO)"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Wait"
+                          },
+                          "parameters": [
+                            "0.1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "COMBO",
+                            "=",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BBText::SetBBText"
+                          },
+                          "parameters": [
+                            "READY2",
+                            "=",
+                            "\"TOTAL:\"+READY2.Total"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Wait"
+                          },
+                          "parameters": [
+                            "2"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BBText::SetBBText"
+                          },
+                          "parameters": [
+                            "READY",
+                            "=",
+                            "\"\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BBText::SetBBText"
+                          },
+                          "parameters": [
+                            "READY2",
+                            "=",
+                            "\"\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ModVarObjet"
+                          },
+                          "parameters": [
+                            "READY2",
+                            "Total",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "folded": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "COMBO",
+                        "=",
+                        "16"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "TimeUp",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySound"
+                      },
+                      "parameters": [
+                        "",
+                        "sfx1.wav",
+                        "9",
+                        "100",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "COMBO",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Combo",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Orden",
+                        "+",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "MUSICAL",
+                        "+"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "EffectCapability::EffectBehavior::EnableEffect"
+                      },
+                      "parameters": [
+                        "position_Target2",
+                        "Effect",
+                        "\"Beat\"",
+                        "no"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+                      },
+                      "parameters": [
+                        "STAR",
+                        "Tween",
+                        "\"Desvan\"",
+                        "STAR.Y()+20",
+                        "\"swingTo\"",
+                        "0.5",
+                        "yes"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ActivateBehavior"
+                      },
+                      "parameters": [
+                        "STAR",
+                        "EllipseMovement",
+                        "no"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "0.6"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+                      },
+                      "parameters": [
+                        "STAR",
+                        "Tween",
+                        "\"Desvaan\"",
+                        "STAR.Y()-40",
+                        "\"swingTo\"",
+                        "0.50",
+                        "yes"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                      },
+                      "parameters": [
+                        "STAR",
+                        "Tween",
+                        "\"Des\"",
+                        "0",
+                        "\"linear\"",
+                        "1.2",
+                        "yes"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "BBText::SetBBText"
+                          },
+                          "parameters": [
+                            "READY",
+                            "=",
+                            "\"COMBO:\"+VariableString(COMBO)"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Wait"
+                          },
+                          "parameters": [
+                            "0.1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ModVarScene"
+                          },
+                          "parameters": [
+                            "COMBO",
+                            "=",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BBText::SetBBText"
+                          },
+                          "parameters": [
+                            "READY2",
+                            "=",
+                            "\"TOTAL:\"+READY2.Total"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Wait"
+                          },
+                          "parameters": [
+                            "2"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BBText::SetBBText"
+                          },
+                          "parameters": [
+                            "READY",
+                            "=",
+                            "\"\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BBText::SetBBText"
+                          },
+                          "parameters": [
+                            "READY2",
+                            "=",
+                            "\"\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ModVarObjet"
+                          },
+                          "parameters": [
+                            "READY2",
+                            "Total",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "disabled": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "COMBO",
+                        ">=",
+                        "Variable(Tempo)/Variable(Tempo)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+                      },
+                      "parameters": [
+                        "STAR",
+                        "Tween",
+                        "\"D\"",
+                        "STAR.Y()+1",
+                        "\"linear\"",
+                        "0.1",
+                        "no"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "SceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "HIT_Tempo",
+                        "True"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "0.15"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "HIT_Tempo",
+                        "False"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Combo",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "SceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "HIT_Tempo",
+                        "False"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Sync",
+                        "True"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Create"
+                      },
+                      "parameters": [
+                        "",
+                        "STAR",
+                        "position_Target2.X()",
+                        "position_Target2.Y()",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Sync",
+                        "False"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "SceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "HIT_Tempo",
+                        "True"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Hit",
+                        "True"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Combo",
+                        "+",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "COMBO",
+                        "+",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Musical",
+                        "+",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Hit",
+                        "False"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Sync",
+                        "True"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "0.1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "TimeUp",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "SceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "HIT_Tempo",
+                        "True"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "z"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "Musical",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "PlaySoundCanal"
+                          },
+                          "parameters": [
+                            "",
+                            "Guitar1.wav",
+                            "9",
+                            "",
+                            "90",
+                            "1"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "SceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "HIT_Tempo",
+                        "True"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "z"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "Musical",
+                        "=",
+                        "2"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "PlaySoundCanal"
+                          },
+                          "parameters": [
+                            "",
+                            "Guitar2.wav",
+                            "9",
+                            "",
+                            "90",
+                            "1"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "SceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "HIT_Tempo",
+                        "True"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "z"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "Musical",
+                        "=",
+                        "3"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "PlaySoundCanal"
+                          },
+                          "parameters": [
+                            "",
+                            "Guitar3.wav",
+                            "9",
+                            "",
+                            "90",
+                            "1"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarScene"
+                      },
+                      "parameters": [
+                        "Musical",
+                        "=",
+                        "4"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ModVarScene"
+                      },
+                      "parameters": [
+                        "Musical",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ChangePlan"
+                      },
+                      "parameters": [
+                        "STAR",
+                        "=",
+                        "STAR.Y()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "EllipseMovement::EllipseMovement::SetLoopDuration"
+                      },
+                      "parameters": [
+                        "STAR",
+                        "EllipseMovement",
+                        "(Variable(Tempo)*PartBeat)",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "z"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Hit",
+                        "True"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "0.1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Hit",
+                        "False"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "disabled": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "SceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "HIT_Tempo",
+                        "True"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Hit",
+                        "True"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "0.1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetSceneVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Hit",
+                        "False"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "FightVariation",
+            ">",
+            "0"
+          ]
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "Arrows",
+                "Power",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "QTEArrow",
+                "QTEArrow",
+                "Arrows.X()",
+                "Arrows.Y()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ScalableCapability::ScalableBehavior::SetValue"
+              },
+              "parameters": [
+                "QTEArrow",
+                "Scale",
+                "=",
+                "4"
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectScaleTween3"
+              },
+              "parameters": [
+                "QTEArrow",
+                "Tween",
+                "\"\"",
+                "0.8",
+                "\"linear\"",
+                "1.2",
+                "yes",
+                "yes"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "Arrows",
+                "Power",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "AnyKeyPressed"
+              },
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+              },
+              "parameters": [
+                "Arrows",
+                "Tween",
+                "\"dq\"",
+                "0",
+                "\"linear\"",
+                "0.08",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::TweenBehavior::AddObjectScaleTween3"
+              },
+              "parameters": [
+                "Arrows",
+                "Tween",
+                "\"q\"",
+                "0.1",
+                "\"easeInQuart\"",
+                "0.08",
+                "yes",
+                "yes"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "FightVariation",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberObjectVariable"
+              },
+              "parameters": [
+                "Arrows",
+                "Power",
+                "-",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "QTEArrow",
+                "QTEArrow"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Arrows",
+                    "Power",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "QTEArrow",
+                    "QTEArrow",
+                    "Arrows.X()",
+                    "Arrows.Y()",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ScalableCapability::ScalableBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "QTEArrow",
+                    "Scale",
+                    "=",
+                    "4"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectScaleTween3"
+                  },
+                  "parameters": [
+                    "QTEArrow",
+                    "Tween",
+                    "\"\"",
+                    "0.8",
+                    "\"linear\"",
+                    "1.2",
+                    "yes",
+                    "yes"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "layers": [
@@ -1905,6 +5972,10 @@
     {
       "name": "Effect",
       "type": "EffectCapability::EffectBehavior"
+    },
+    {
+      "name": "EllipseMovement",
+      "type": "EllipseMovement::EllipseMovement"
     },
     {
       "name": "Flippable",

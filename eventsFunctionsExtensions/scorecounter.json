@@ -1,6 +1,7 @@
 {
   "author": "",
   "category": "User interface",
+  "dimension": "",
   "extensionNamespace": "",
   "fullName": "Animated Score Counter",
   "gdevelopVersion": ">=5.5.222",
@@ -320,7 +321,35 @@
           "name": "Speed"
         }
       ],
-      "sharedPropertyDescriptors": []
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "Text"
+          },
+          {
+            "propertyName": "Prefix"
+          },
+          {
+            "propertyName": "Suffix"
+          },
+          {
+            "propertyName": "Duration"
+          },
+          {
+            "propertyName": "Increment"
+          },
+          {
+            "propertyName": "CounterValue"
+          },
+          {
+            "propertyName": "DisplayedValue"
+          },
+          {
+            "propertyName": "Speed"
+          }
+        ]
+      }
     },
     {
       "description": "Shake objects with translation, rotation and scale.",
@@ -2712,7 +2741,17 @@
           "name": "Property"
         }
       ],
-      "sharedPropertyDescriptors": []
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "Scale"
+          },
+          {
+            "propertyName": "Property"
+          }
+        ]
+      }
     }
   ],
   "eventsBasedObjects": [
@@ -3325,6 +3364,19 @@
           "name": "Score"
         }
       ],
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "folderName": "Value",
+            "children": [
+              {
+                "propertyName": "Score"
+              }
+            ]
+          }
+        ]
+      },
       "variants": [
         {
           "areaMaxX": 152,

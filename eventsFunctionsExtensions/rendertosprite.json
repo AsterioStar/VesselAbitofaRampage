@@ -1,6 +1,7 @@
 {
   "author": "Arthur Pacaud (arthuro555)",
   "category": "Advanced",
+  "dimension": "",
   "extensionNamespace": "",
   "fullName": "Sprite Snapshot",
   "gdevelopVersion": ">=5.5.222",

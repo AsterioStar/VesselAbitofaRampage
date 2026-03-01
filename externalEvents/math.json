@@ -1,5 +1,11 @@
 {
   "associatedLayout": "Battle",
   "name": "Math",
-  "events": []
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": []
+    }
+  ]
 }

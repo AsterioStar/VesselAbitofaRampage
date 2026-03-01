@@ -1,6 +1,7 @@
 {
   "author": "@4ian",
   "category": "Movement",
+  "dimension": "",
   "extensionNamespace": "",
   "fullName": "Linear Movement",
   "gdevelopVersion": ">=5.5.222",
@@ -95,7 +96,17 @@
           "name": "SpeedY"
         }
       ],
-      "sharedPropertyDescriptors": []
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "SpeedX"
+          },
+          {
+            "propertyName": "SpeedY"
+          }
+        ]
+      }
     },
     {
       "description": "Move objects ahead according to their angle.",
@@ -152,7 +163,14 @@
           "name": "Speed"
         }
       ],
-      "sharedPropertyDescriptors": []
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "Speed"
+          }
+        ]
+      }
     }
   ],
   "eventsBasedObjects": []

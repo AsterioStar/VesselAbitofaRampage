@@ -1,6 +1,7 @@
 {
   "author": "",
   "category": "Visual effect",
+  "dimension": "",
   "extensionNamespace": "",
   "fullName": "Slice an object into pieces",
   "gdevelopVersion": ">=5.5.222",

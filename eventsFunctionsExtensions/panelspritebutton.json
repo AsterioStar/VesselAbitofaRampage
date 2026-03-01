@@ -1,15 +1,16 @@
 {
   "author": "",
   "category": "User interface",
+  "dimension": "",
   "extensionNamespace": "",
-  "fullName": "Panel sprite button",
+  "fullName": "Labeled button",
   "gdevelopVersion": ">=5.5.230",
   "helpPath": "/objects/button",
   "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjMsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iSWNvbnMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzIgMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMyIDMyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9DQo8L3N0eWxlPg0KPHBhdGggY2xhc3M9InN0MCIgZD0iTTI5LDIzSDNjLTEuMSwwLTItMC45LTItMlYxMWMwLTEuMSwwLjktMiwyLTJoMjZjMS4xLDAsMiwwLjksMiwydjEwQzMxLDIyLjEsMzAuMSwyMywyOSwyM3oiLz4NCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMywxOUwxMywxOWMtMS4xLDAtMi0wLjktMi0ydi0yYzAtMS4xLDAuOS0yLDItMmgwYzEuMSwwLDIsMC45LDIsMnYyQzE1LDE4LjEsMTQuMSwxOSwxMywxOXoiLz4NCjxsaW5lIGNsYXNzPSJzdDAiIHgxPSIxOCIgeTE9IjEzIiB4Mj0iMTgiIHkyPSIxOSIvPg0KPGxpbmUgY2xhc3M9InN0MCIgeDE9IjIxIiB5MT0iMTMiIHgyPSIxOCIgeTI9IjE3Ii8+DQo8bGluZSBjbGFzcz0ic3QwIiB4MT0iMjEiIHkxPSIxOSIgeDI9IjE5IiB5Mj0iMTYiLz4NCjwvc3ZnPg0K",
   "name": "PanelSpriteButton",
   "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/Line Hero Pack/Master/SVG/Interface Elements/Interface Elements_interface_ui_button_ok_cta_clock_tap.svg",
-  "shortDescription": "A button that can be customized.",
-  "version": "2.1.1",
+  "shortDescription": "A button with a label.",
+  "version": "2.2.0",
   "description": [
     "A button that can be used for menus and most labelled buttons of a game. The button can be customized with a background for each state and a label. It handles user interactions and a simple condition can be used to check if it is clicked.",
     "",
@@ -1226,7 +1227,976 @@
           "name": "Index"
         }
       ],
-      "sharedPropertyDescriptors": []
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "ShouldCheckHovering"
+          },
+          {
+            "propertyName": "State"
+          },
+          {
+            "propertyName": "TouchId"
+          },
+          {
+            "propertyName": "TouchIsInside"
+          },
+          {
+            "propertyName": "MouseIsInside"
+          },
+          {
+            "propertyName": "Index"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Change the text style when the button is hovered.",
+      "fullName": "Hover text style",
+      "name": "TextStyleState",
+      "objectType": "TextObject::Text",
+      "private": true,
+      "eventsFunctions": [
+        {
+          "description": "Check if isHovered.",
+          "fullName": "IsHovered",
+          "functionType": "Condition",
+          "name": "IsHovered",
+          "sentence": "_PARAM0_ isHovered",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "IsHovered",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnBoolean"
+                  },
+                  "parameters": [
+                    "True"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "TextObject::Text",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "PanelSpriteButton::TextStyleState",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Change if isHovered.",
+          "fullName": "IsHovered",
+          "functionType": "Action",
+          "name": "SetIsHovered",
+          "sentence": "_PARAM0_ isHovered: _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "IsHovered",
+                    "False",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "Value",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "IsHovered",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "HoverFontSize",
+                        ">",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "IdleFontSize",
+                        "=",
+                        "Object.FontSize()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "TextObject::Text::SetFontSize"
+                      },
+                      "parameters": [
+                        "Object",
+                        "=",
+                        "HoverFontSize"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "HoverColor",
+                        "!=",
+                        "\"\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "IdleColor",
+                        "=",
+                        "Object.Behavior::Color()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "TextObject::ChangeColor"
+                      },
+                      "parameters": [
+                        "Object",
+                        "HoverColor"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ShouldEnableShadowOnHover",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextObject::ShowShadow"
+                      },
+                      "parameters": [
+                        "Object",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ShouldEnableOutlineOnHover",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextObject::Text::SetOutlineEnabled"
+                      },
+                      "parameters": [
+                        "Object",
+                        "yes"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "IsHovered",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "Value",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "IsHovered",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "HoverFontSize",
+                        ">",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextObject::Text::SetFontSize"
+                      },
+                      "parameters": [
+                        "Object",
+                        "=",
+                        "IdleFontSize"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "HoverColor",
+                        "!=",
+                        "\"\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextObject::ChangeColor"
+                      },
+                      "parameters": [
+                        "Object",
+                        "IdleColor"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ShouldEnableShadowOnHover",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextObject::ShowShadow"
+                      },
+                      "parameters": [
+                        "Object",
+                        "no"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ShouldEnableOutlineOnHover",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextObject::Text::SetOutlineEnabled"
+                      },
+                      "parameters": [
+                        "Object",
+                        "no"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "TextObject::Text",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "PanelSpriteButton::TextStyleState",
+              "type": "behavior"
+            },
+            {
+              "defaultValue": "yes",
+              "description": "IsHovered",
+              "name": "Value",
+              "optional": true,
+              "type": "yesorno"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Return the text color",
+          "fullName": "Text color",
+          "functionType": "StringExpression",
+          "name": "Color",
+          "private": true,
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "/** @type {gdjs.TextRuntimeObject} */",
+                "const object = eventsFunctionContext.getObjects(\"Object\")[0];",
+                "",
+                "eventsFunctionContext.returnValue = object._color.join(\";\");"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "expressionType": {
+            "type": "color"
+          },
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "TextObject::Text",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "PanelSpriteButton::TextStyleState",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "propertyDescriptors": [
+        {
+          "value": "",
+          "type": "Boolean",
+          "label": "Outline on hover",
+          "name": "ShouldEnableOutlineOnHover"
+        },
+        {
+          "value": "",
+          "type": "Color",
+          "label": "Hover color",
+          "name": "HoverColor"
+        },
+        {
+          "value": "",
+          "type": "Boolean",
+          "label": "Enable shadow on hover",
+          "name": "ShouldEnableShadowOnHover"
+        },
+        {
+          "value": "0",
+          "type": "Number",
+          "unit": "Pixel",
+          "label": "Hover font size",
+          "name": "HoverFontSize"
+        },
+        {
+          "value": "",
+          "type": "Boolean",
+          "label": "",
+          "hidden": true,
+          "name": "IsHovered"
+        },
+        {
+          "value": "0",
+          "type": "Number",
+          "unit": "Pixel",
+          "label": "Idle font size",
+          "hidden": true,
+          "name": "IdleFontSize"
+        },
+        {
+          "value": "",
+          "type": "Color",
+          "label": "Idle color",
+          "hidden": true,
+          "name": "IdleColor"
+        }
+      ],
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "IsHovered"
+          },
+          {
+            "propertyName": "HoverFontSize"
+          },
+          {
+            "propertyName": "IdleFontSize"
+          },
+          {
+            "propertyName": "HoverColor"
+          },
+          {
+            "propertyName": "IdleColor"
+          },
+          {
+            "propertyName": "ShouldEnableOutlineOnHover"
+          },
+          {
+            "propertyName": "ShouldEnableShadowOnHover"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Change the text style when the button is hovered.",
+      "fullName": "Hover bitmap text style",
+      "name": "BitmapTextStyleState",
+      "objectType": "BitmapText::BitmapTextObject",
+      "private": true,
+      "eventsFunctions": [
+        {
+          "description": "Check if isHovered.",
+          "fullName": "IsHovered",
+          "functionType": "Condition",
+          "name": "IsHovered",
+          "sentence": "_PARAM0_ isHovered",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "IsHovered",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnBoolean"
+                  },
+                  "parameters": [
+                    "True"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "BitmapText::BitmapTextObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "PanelSpriteButton::BitmapTextStyleState",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Change if isHovered.",
+          "fullName": "IsHovered",
+          "functionType": "Action",
+          "name": "SetIsHovered",
+          "sentence": "_PARAM0_ isHovered: _PARAM2_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "IsHovered",
+                    "False",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "Value",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "IsHovered",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "HoverColor",
+                        "!=",
+                        "\"\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "IdleColor",
+                        "=",
+                        "Object.Behavior::Color()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BitmapText::SetTint"
+                      },
+                      "parameters": [
+                        "Object",
+                        "HoverColor"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Or"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "HoverPrefix",
+                            "!=",
+                            "\"\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "HoverSuffix",
+                            "!=",
+                            "\"\""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "IdleText",
+                        "=",
+                        "Object.Text::Value()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Text",
+                        "=",
+                        "HoverPrefix + Object.Text::Value() + HoverSuffix"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "IsHovered",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "Value",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "IsHovered",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "HoverColor",
+                        "!=",
+                        "\"\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "BitmapText::SetTint"
+                      },
+                      "parameters": [
+                        "Object",
+                        "IdleColor"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Or"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "HoverPrefix",
+                            "!=",
+                            "\"\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "HoverSuffix",
+                            "!=",
+                            "\"\""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Text",
+                        "=",
+                        "IdleText"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "BitmapText::BitmapTextObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "PanelSpriteButton::BitmapTextStyleState",
+              "type": "behavior"
+            },
+            {
+              "defaultValue": "yes",
+              "description": "IsHovered",
+              "name": "Value",
+              "optional": true,
+              "type": "yesorno"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Return the text color",
+          "fullName": "Text color",
+          "functionType": "StringExpression",
+          "name": "Color",
+          "private": true,
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "/** @type {gdjs.BitmapTextRuntimeObject} */",
+                "const object = eventsFunctionContext.getObjects(\"Object\")[0];",
+                "",
+                "eventsFunctionContext.returnValue = object._tint.join(\";\");"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "expressionType": {
+            "type": "color"
+          },
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "BitmapText::BitmapTextObject",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "PanelSpriteButton::BitmapTextStyleState",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "propertyDescriptors": [
+        {
+          "value": "",
+          "type": "Color",
+          "label": "Hover color",
+          "name": "HoverColor"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "Hover prefix",
+          "name": "HoverPrefix"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "Hover suffix",
+          "name": "HoverSuffix"
+        },
+        {
+          "value": "",
+          "type": "Boolean",
+          "label": "",
+          "hidden": true,
+          "name": "IsHovered"
+        },
+        {
+          "value": "",
+          "type": "String",
+          "label": "Idle text",
+          "hidden": true,
+          "name": "IdleText"
+        },
+        {
+          "value": "",
+          "type": "Color",
+          "label": "Idle color",
+          "hidden": true,
+          "name": "IdleColor"
+        }
+      ],
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "IsHovered"
+          },
+          {
+            "propertyName": "HoverPrefix"
+          },
+          {
+            "propertyName": "HoverSuffix"
+          },
+          {
+            "propertyName": "IdleText"
+          },
+          {
+            "propertyName": "HoverColor"
+          },
+          {
+            "propertyName": "IdleColor"
+          }
+        ]
+      }
     }
   ],
   "eventsBasedObjects": [
@@ -1237,9 +2207,10 @@
       "areaMinX": 0,
       "areaMinY": 0,
       "areaMinZ": 0,
+      "assetStoreTag": "menu buttons",
       "defaultName": "Button",
-      "description": "A button that can be customized.",
-      "fullName": "Button (panel sprite)",
+      "description": "Button with a label.",
+      "fullName": "Labeled button",
       "isInnerAreaFollowingParentSize": true,
       "isUsingLegacyInstancesRenderer": false,
       "name": "PanelSpriteButton",
@@ -1264,6 +2235,17 @@
               "relativeToOriginalWindowSize": true,
               "rightEdgeAnchor": 2,
               "useLegacyBottomAndRightAnchors": false
+            },
+            {
+              "name": "TextStyleState",
+              "type": "PanelSpriteButton::TextStyleState",
+              "ShouldEnableOutlineOnHover": false,
+              "HoverColor": "",
+              "ShouldEnableShadowOnHover": false,
+              "HoverFontSize": 0,
+              "IsHovered": false,
+              "IdleFontSize": 0,
+              "IdleColor": ""
             }
           ],
           "string": "Text",
@@ -1411,6 +2393,16 @@
               "relativeToOriginalWindowSize": true,
               "rightEdgeAnchor": 2,
               "useLegacyBottomAndRightAnchors": false
+            },
+            {
+              "name": "BitmapTextStyleState",
+              "type": "PanelSpriteButton::BitmapTextStyleState",
+              "HoverColor": "",
+              "HoverPrefix": "",
+              "HoverSuffix": "",
+              "IsHovered": false,
+              "IdleText": "",
+              "IdleColor": ""
             }
           ],
           "content": {
@@ -1538,7 +2530,23 @@
           "initialVariables": []
         }
       ],
-      "editionSettings": {},
+      "editionSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridOffsetZ": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 2.734375,
+        "windowMask": false,
+        "selectedLayer": "",
+        "gameEditorMode": "instances-editor"
+      },
       "eventsFunctions": [
         {
           "fullName": "",
@@ -1793,6 +2801,28 @@
                   "actions": [
                     {
                       "type": {
+                        "value": "PanelSpriteButton::TextStyleState::SetIsHovered"
+                      },
+                      "parameters": [
+                        "Label",
+                        "TextStyleState",
+                        "no",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::BitmapTextStyleState::SetIsHovered"
+                      },
+                      "parameters": [
+                        "BitmapLabel",
+                        "BitmapTextStyleState",
+                        "no",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
                         "value": "PanelSpriteButton::PanelSpriteButton::SetLabelOffset"
                       },
                       "parameters": [
@@ -1946,6 +2976,28 @@
                   "actions": [
                     {
                       "type": {
+                        "value": "PanelSpriteButton::TextStyleState::SetIsHovered"
+                      },
+                      "parameters": [
+                        "Label",
+                        "TextStyleState",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::BitmapTextStyleState::SetIsHovered"
+                      },
+                      "parameters": [
+                        "BitmapLabel",
+                        "BitmapTextStyleState",
+                        "yes",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
                         "value": "PanelSpriteButton::PanelSpriteButton::SetLabelOffset"
                       },
                       "parameters": [
@@ -1979,26 +3031,45 @@
                       "parameters": [
                         "Pressed"
                       ]
-                    },
+                    }
+                  ],
+                  "events": [
                     {
-                      "type": {
-                        "value": "Tween::RemoveTween"
-                      },
-                      "parameters": [
-                        "Hovered",
-                        "Tween",
-                        "\"Fadeout\""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "OpacityCapability::OpacityBehavior::SetValue"
-                      },
-                      "parameters": [
-                        "Hovered",
-                        "Opacity",
-                        "=",
-                        "255"
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "HoveredFadeOutDuration",
+                            ">",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Tween::RemoveTween"
+                          },
+                          "parameters": [
+                            "Hovered",
+                            "Tween",
+                            "\"Fadeout\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "OpacityCapability::OpacityBehavior::SetValue"
+                          },
+                          "parameters": [
+                            "Hovered",
+                            "Opacity",
+                            "=",
+                            "255"
+                          ]
+                        }
                       ]
                     }
                   ]
@@ -2023,6 +3094,28 @@
                     }
                   ],
                   "actions": [
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::TextStyleState::SetIsHovered"
+                      },
+                      "parameters": [
+                        "Label",
+                        "TextStyleState",
+                        "no",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::BitmapTextStyleState::SetIsHovered"
+                      },
+                      "parameters": [
+                        "BitmapLabel",
+                        "BitmapTextStyleState",
+                        "no",
+                        ""
+                      ]
+                    },
                     {
                       "type": {
                         "value": "PanelSpriteButton::PanelSpriteButton::SetLabelOffset"
@@ -2081,6 +3174,28 @@
                     }
                   ],
                   "actions": [
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::TextStyleState::SetIsHovered"
+                      },
+                      "parameters": [
+                        "Label",
+                        "TextStyleState",
+                        "yes",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::BitmapTextStyleState::SetIsHovered"
+                      },
+                      "parameters": [
+                        "BitmapLabel",
+                        "BitmapTextStyleState",
+                        "yes",
+                        ""
+                      ]
+                    },
                     {
                       "type": {
                         "value": "PanelSpriteButton::PanelSpriteButton::SetLabelOffset"
@@ -2689,6 +3804,7 @@
           "type": "Number",
           "unit": "Pixel",
           "label": "",
+          "group": "States",
           "hidden": true,
           "name": "LabelOffset"
         },
@@ -2710,7 +3826,383 @@
           "name": "_PropertyMapping"
         }
       ],
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "LabelText"
+          },
+          {
+            "propertyName": "_PropertyMapping"
+          },
+          {
+            "folderName": "States",
+            "children": [
+              {
+                "propertyName": "HoveredFadeOutDuration"
+              },
+              {
+                "propertyName": "PressedLabelOffsetY"
+              },
+              {
+                "propertyName": "LabelOffset"
+              }
+            ]
+          }
+        ]
+      },
       "variants": [
+        {
+          "areaMaxX": 192,
+          "areaMaxY": 64,
+          "areaMaxZ": 64,
+          "areaMinX": 0,
+          "areaMinY": 0,
+          "areaMinZ": 0,
+          "name": "option1",
+          "objects": [
+            {
+              "assetStoreId": "",
+              "bold": false,
+              "italic": false,
+              "name": "Label",
+              "smoothed": true,
+              "type": "TextObject::Text",
+              "underlined": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Anchor",
+                  "type": "AnchorBehavior::AnchorBehavior",
+                  "bottomEdgeAnchor": 2,
+                  "leftEdgeAnchor": 1,
+                  "relativeToOriginalWindowSize": true,
+                  "rightEdgeAnchor": 2,
+                  "topEdgeAnchor": 1,
+                  "useLegacyBottomAndRightAnchors": false
+                },
+                {
+                  "name": "TextStyleState",
+                  "type": "PanelSpriteButton::TextStyleState",
+                  "ShouldEnableOutlineOnHover": false,
+                  "HoverColor": "",
+                  "ShouldEnableShadowOnHover": false,
+                  "HoverFontSize": 0,
+                  "IsHovered": false,
+                  "IdleFontSize": 0,
+                  "IdleColor": ""
+                }
+              ],
+              "string": "Button",
+              "font": "758a5ad5d3131fef02a270e9ab7ab030db457b06730add8a0b31581a76b93470_Silkscreen-Regular.ttf",
+              "textAlignment": "center",
+              "characterSize": 26,
+              "color": {
+                "b": 255,
+                "g": 255,
+                "r": 255
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "Button",
+                "font": "758a5ad5d3131fef02a270e9ab7ab030db457b06730add8a0b31581a76b93470_Silkscreen-Regular.ttf",
+                "textAlignment": "center",
+                "verticalTextAlignment": "center",
+                "characterSize": 26,
+                "lineHeight": 0,
+                "color": "255;255;255"
+              }
+            },
+            {
+              "assetStoreId": "",
+              "bottomMargin": 22,
+              "height": 64,
+              "leftMargin": 16,
+              "name": "Idle",
+              "rightMargin": 16,
+              "texture": "Black Square Decorated Button_Idle.png",
+              "tiled": false,
+              "topMargin": 16,
+              "type": "PanelSpriteObject::PanelSprite",
+              "width": 192,
+              "variables": [
+                {
+                  "folded": true,
+                  "name": "State",
+                  "type": "string",
+                  "value": "Idle"
+                }
+              ],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Anchor",
+                  "type": "AnchorBehavior::AnchorBehavior",
+                  "bottomEdgeAnchor": 2,
+                  "leftEdgeAnchor": 1,
+                  "relativeToOriginalWindowSize": true,
+                  "rightEdgeAnchor": 2,
+                  "topEdgeAnchor": 1,
+                  "useLegacyBottomAndRightAnchors": false
+                },
+                {
+                  "name": "ButtonFSM",
+                  "type": "PanelSpriteButton::ButtonFSM",
+                  "serializedBehavior": {
+                    "name": "ButtonFSM",
+                    "type": "PanelSpriteButton::ButtonFSM",
+                    "ShouldCheckHovering": true
+                  }
+                }
+              ]
+            },
+            {
+              "assetStoreId": "",
+              "bottomMargin": 22,
+              "height": 64,
+              "leftMargin": 16,
+              "name": "Hovered",
+              "rightMargin": 16,
+              "texture": "Black Square Decorated Button_Hovered.png",
+              "tiled": false,
+              "topMargin": 16,
+              "type": "PanelSpriteObject::PanelSprite",
+              "width": 192,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Anchor",
+                  "type": "AnchorBehavior::AnchorBehavior",
+                  "bottomEdgeAnchor": 2,
+                  "leftEdgeAnchor": 1,
+                  "relativeToOriginalWindowSize": true,
+                  "rightEdgeAnchor": 2,
+                  "topEdgeAnchor": 1,
+                  "useLegacyBottomAndRightAnchors": false
+                },
+                {
+                  "name": "Tween",
+                  "type": "Tween::TweenBehavior",
+                  "serializedBehavior": {
+                    "name": "Tween",
+                    "type": "Tween::TweenBehavior"
+                  }
+                }
+              ]
+            },
+            {
+              "assetStoreId": "",
+              "bottomMargin": 16,
+              "height": 64,
+              "leftMargin": 16,
+              "name": "Pressed",
+              "rightMargin": 16,
+              "texture": "Black Square Decorated Button_Pressed.png",
+              "tiled": false,
+              "topMargin": 22,
+              "type": "PanelSpriteObject::PanelSprite",
+              "width": 192,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Anchor",
+                  "type": "AnchorBehavior::AnchorBehavior",
+                  "bottomEdgeAnchor": 2,
+                  "leftEdgeAnchor": 1,
+                  "relativeToOriginalWindowSize": true,
+                  "rightEdgeAnchor": 2,
+                  "topEdgeAnchor": 1,
+                  "useLegacyBottomAndRightAnchors": false
+                }
+              ]
+            },
+            {
+              "assetStoreId": "",
+              "name": "BitmapLabel",
+              "type": "BitmapText::BitmapTextObject",
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Anchor",
+                  "type": "AnchorBehavior::AnchorBehavior",
+                  "bottomEdgeAnchor": 4,
+                  "topEdgeAnchor": 4,
+                  "leftEdgeAnchor": 1,
+                  "relativeToOriginalWindowSize": true,
+                  "rightEdgeAnchor": 2,
+                  "useLegacyBottomAndRightAnchors": false
+                },
+                {
+                  "name": "BitmapTextStyleState",
+                  "type": "PanelSpriteButton::BitmapTextStyleState",
+                  "HoverColor": "",
+                  "HoverPrefix": "",
+                  "HoverSuffix": "",
+                  "IsHovered": false,
+                  "IdleText": "",
+                  "IdleColor": ""
+                }
+              ],
+              "content": {
+                "text": "Text",
+                "opacity": 255,
+                "scale": 1,
+                "fontSize": 20,
+                "tint": "255;255;255",
+                "bitmapFontResourceName": "",
+                "textureAtlasResourceName": "",
+                "align": "center",
+                "verticalTextAlignment": "center"
+              }
+            }
+          ],
+          "objectsFolderStructure": {
+            "folderName": "__ROOT",
+            "children": [
+              {
+                "objectName": "Label"
+              },
+              {
+                "objectName": "Idle"
+              },
+              {
+                "objectName": "Hovered"
+              },
+              {
+                "objectName": "Pressed"
+              },
+              {
+                "objectName": "BitmapLabel"
+              }
+            ]
+          },
+          "objectsGroups": [
+            {
+              "name": "Background",
+              "objects": [
+                {
+                  "name": "Idle"
+                },
+                {
+                  "name": "Hovered"
+                },
+                {
+                  "name": "Pressed"
+                }
+              ]
+            },
+            {
+              "name": "Labels",
+              "objects": [
+                {
+                  "name": "Label"
+                },
+                {
+                  "name": "BitmapLabel"
+                }
+              ]
+            }
+          ],
+          "layers": [
+            {
+              "ambientLightColorB": 200,
+              "ambientLightColorG": 200,
+              "ambientLightColorR": 200,
+              "camera2DPlaneMaxDrawingDistance": 5000,
+              "camera3DFarPlaneDistance": 10000,
+              "camera3DFieldOfView": 45,
+              "camera3DNearPlaneDistance": 3,
+              "cameraType": "",
+              "followBaseLayerCamera": false,
+              "isLightingLayer": false,
+              "isLocked": false,
+              "name": "",
+              "renderingType": "",
+              "visibility": true,
+              "cameras": [
+                {
+                  "defaultSize": true,
+                  "defaultViewport": true,
+                  "height": 0,
+                  "viewportBottom": 1,
+                  "viewportLeft": 0,
+                  "viewportRight": 1,
+                  "viewportTop": 0,
+                  "width": 0
+                }
+              ],
+              "effects": []
+            }
+          ],
+          "instances": [
+            {
+              "angle": 0,
+              "customSize": false,
+              "depth": 1,
+              "height": 64,
+              "layer": "",
+              "name": "Idle",
+              "persistentUuid": "24882334-eec8-403e-8bf1-70fc928a46e6",
+              "width": 64,
+              "x": 0,
+              "y": 0,
+              "zOrder": 1,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": true,
+              "depth": 1,
+              "height": 54,
+              "keepRatio": true,
+              "layer": "",
+              "name": "Label",
+              "persistentUuid": "45b09b9e-dba3-4877-a4d0-a7bc8c4cea28",
+              "width": 166,
+              "x": 13,
+              "y": 29,
+              "zOrder": 2,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            }
+          ],
+          "editionSettings": {
+            "grid": false,
+            "gridType": "rectangular",
+            "gridWidth": 32,
+            "gridHeight": 32,
+            "gridDepth": 32,
+            "gridOffsetX": 0,
+            "gridOffsetY": 0,
+            "gridOffsetZ": 0,
+            "gridColor": 10401023,
+            "gridAlpha": 0.8,
+            "snap": false,
+            "zoomFactor": 2.3689563725446554,
+            "windowMask": false,
+            "selectedLayer": "",
+            "gameEditorMode": "instances-editor"
+          }
+        },
         {
           "areaMaxX": 192,
           "areaMaxY": 64,
@@ -2742,6 +4234,17 @@
                   "rightEdgeAnchor": 2,
                   "topEdgeAnchor": 1,
                   "useLegacyBottomAndRightAnchors": false
+                },
+                {
+                  "name": "TextStyleState",
+                  "type": "PanelSpriteButton::TextStyleState",
+                  "ShouldEnableOutlineOnHover": false,
+                  "HoverColor": "",
+                  "ShouldEnableShadowOnHover": false,
+                  "HoverFontSize": 0,
+                  "IsHovered": false,
+                  "IdleFontSize": 0,
+                  "IdleColor": ""
                 }
               ],
               "string": "Button",
@@ -2897,6 +4400,16 @@
                   "relativeToOriginalWindowSize": true,
                   "rightEdgeAnchor": 2,
                   "useLegacyBottomAndRightAnchors": false
+                },
+                {
+                  "name": "BitmapTextStyleState",
+                  "type": "PanelSpriteButton::BitmapTextStyleState",
+                  "HoverColor": "",
+                  "HoverPrefix": "",
+                  "HoverSuffix": "",
+                  "IsHovered": false,
+                  "IdleText": "",
+                  "IdleColor": ""
                 }
               ],
               "content": {
@@ -3026,6 +4539,269 @@
             }
           ],
           "editionSettings": {}
+        },
+        {
+          "areaMaxX": 256,
+          "areaMaxY": 64,
+          "areaMaxZ": 64,
+          "areaMinX": 0,
+          "areaMinY": 0,
+          "areaMinZ": 0,
+          "assetStoreAssetId": "9d5de415b6e469c681701ea42d3b1c486fee31d6ef591a2d3e226f639ab486ff",
+          "assetStoreOriginalName": "Semi-transparent black and white",
+          "name": "Semi-transparent black and white",
+          "objects": [
+            {
+              "assetStoreId": "",
+              "bold": false,
+              "italic": false,
+              "name": "Label",
+              "smoothed": true,
+              "type": "TextObject::Text",
+              "underlined": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Anchor",
+                  "type": "AnchorBehavior::AnchorBehavior",
+                  "bottomEdgeAnchor": 4,
+                  "topEdgeAnchor": 4,
+                  "leftEdgeAnchor": 1,
+                  "relativeToOriginalWindowSize": true,
+                  "rightEdgeAnchor": 2,
+                  "useLegacyBottomAndRightAnchors": false
+                }
+              ],
+              "string": "Button",
+              "font": "",
+              "textAlignment": "center",
+              "characterSize": 26,
+              "color": {
+                "b": 255,
+                "g": 255,
+                "r": 255
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "Button",
+                "font": "",
+                "textAlignment": "center",
+                "verticalTextAlignment": "center",
+                "characterSize": 26,
+                "lineHeight": 0,
+                "color": "255;255;255"
+              }
+            },
+            {
+              "assetStoreId": "",
+              "bottomMargin": 8,
+              "height": 106,
+              "leftMargin": 8,
+              "name": "Idle",
+              "rightMargin": 8,
+              "texture": "Border.png",
+              "tiled": false,
+              "topMargin": 8,
+              "type": "PanelSpriteObject::PanelSprite",
+              "width": 256,
+              "variables": [
+                {
+                  "folded": true,
+                  "name": "State",
+                  "type": "string",
+                  "value": "Idle"
+                }
+              ],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Anchor",
+                  "type": "AnchorBehavior::AnchorBehavior",
+                  "bottomEdgeAnchor": 2,
+                  "leftEdgeAnchor": 1,
+                  "relativeToOriginalWindowSize": true,
+                  "rightEdgeAnchor": 2,
+                  "topEdgeAnchor": 1,
+                  "useLegacyBottomAndRightAnchors": false
+                },
+                {
+                  "name": "ButtonFSM",
+                  "type": "PanelSpriteButton::ButtonFSM",
+                  "ShouldCheckHovering": true
+                }
+              ]
+            },
+            {
+              "assetStoreId": "",
+              "bottomMargin": 8,
+              "height": 106,
+              "leftMargin": 8,
+              "name": "Hovered",
+              "rightMargin": 8,
+              "texture": "Border2.png",
+              "tiled": false,
+              "topMargin": 8,
+              "type": "PanelSpriteObject::PanelSprite",
+              "width": 256,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Anchor",
+                  "type": "AnchorBehavior::AnchorBehavior",
+                  "bottomEdgeAnchor": 2,
+                  "leftEdgeAnchor": 1,
+                  "relativeToOriginalWindowSize": true,
+                  "rightEdgeAnchor": 2,
+                  "topEdgeAnchor": 1,
+                  "useLegacyBottomAndRightAnchors": false
+                },
+                {
+                  "name": "Tween",
+                  "type": "Tween::TweenBehavior"
+                }
+              ]
+            },
+            {
+              "assetStoreId": "",
+              "bottomMargin": 8,
+              "height": 106,
+              "leftMargin": 8,
+              "name": "Pressed",
+              "rightMargin": 8,
+              "texture": "Border2.png",
+              "tiled": false,
+              "topMargin": 8,
+              "type": "PanelSpriteObject::PanelSprite",
+              "width": 256,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "Anchor",
+                  "type": "AnchorBehavior::AnchorBehavior",
+                  "bottomEdgeAnchor": 2,
+                  "leftEdgeAnchor": 1,
+                  "relativeToOriginalWindowSize": true,
+                  "rightEdgeAnchor": 2,
+                  "topEdgeAnchor": 1,
+                  "useLegacyBottomAndRightAnchors": false
+                }
+              ]
+            }
+          ],
+          "objectsFolderStructure": {
+            "folderName": "__ROOT",
+            "children": [
+              {
+                "objectName": "Label"
+              },
+              {
+                "objectName": "Idle"
+              },
+              {
+                "objectName": "Hovered"
+              },
+              {
+                "objectName": "Pressed"
+              }
+            ]
+          },
+          "objectsGroups": [
+            {
+              "name": "Background",
+              "objects": [
+                {
+                  "name": "Idle"
+                },
+                {
+                  "name": "Hovered"
+                },
+                {
+                  "name": "Pressed"
+                }
+              ]
+            }
+          ],
+          "layers": [
+            {
+              "ambientLightColorB": 200,
+              "ambientLightColorG": 200,
+              "ambientLightColorR": 200,
+              "camera2DPlaneMaxDrawingDistance": 5000,
+              "camera3DFarPlaneDistance": 10000,
+              "camera3DFieldOfView": 45,
+              "camera3DNearPlaneDistance": 3,
+              "cameraType": "",
+              "followBaseLayerCamera": false,
+              "isLightingLayer": false,
+              "isLocked": false,
+              "name": "",
+              "renderingType": "",
+              "visibility": true,
+              "cameras": [
+                {
+                  "defaultSize": true,
+                  "defaultViewport": true,
+                  "height": 0,
+                  "viewportBottom": 1,
+                  "viewportLeft": 0,
+                  "viewportRight": 1,
+                  "viewportTop": 0,
+                  "width": 0
+                }
+              ],
+              "effects": []
+            }
+          ],
+          "instances": [
+            {
+              "angle": 0,
+              "customSize": true,
+              "depth": 1,
+              "height": 64,
+              "layer": "",
+              "name": "Idle",
+              "persistentUuid": "24882334-eec8-403e-8bf1-70fc928a46e6",
+              "width": 256,
+              "x": 0,
+              "y": 0,
+              "zOrder": 1,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": true,
+              "depth": 1,
+              "height": 64,
+              "layer": "",
+              "name": "Label",
+              "persistentUuid": "3b29c95c-5363-4e25-bf47-eecf13e8a226",
+              "width": 256,
+              "x": 0,
+              "y": 32,
+              "zOrder": 2,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            }
+          ],
+          "editionSettings": []
         }
       ]
     }

@@ -1,6 +1,7 @@
 {
   "author": "",
   "category": "User interface",
+  "dimension": "",
   "extensionNamespace": "",
   "fullName": "Resource bar (continuous)",
   "gdevelopVersion": ">=5.5.230",
@@ -670,7 +671,23 @@
           "name": "PreviousHighValueDuration"
         }
       ],
-      "sharedPropertyDescriptors": []
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "CurrentValue"
+          },
+          {
+            "propertyName": "MaxValue"
+          },
+          {
+            "propertyName": "PreviousHighValue"
+          },
+          {
+            "propertyName": "PreviousHighValueDuration"
+          }
+        ]
+      }
     }
   ],
   "eventsBasedObjects": [
@@ -2501,6 +2518,43 @@
           "name": "OldParentWidth"
         }
       ],
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "MaxValue"
+          },
+          {
+            "propertyName": "InitialValue"
+          },
+          {
+            "propertyName": "PreviousInitialValue"
+          },
+          {
+            "folderName": "Animation",
+            "children": [
+              {
+                "propertyName": "PreviousHighValueDuration"
+              },
+              {
+                "propertyName": "EasingDuration"
+              }
+            ]
+          },
+          {
+            "propertyName": "ShowLabel"
+          },
+          {
+            "propertyName": "BarLeftPlusRightMargin"
+          },
+          {
+            "propertyName": "BarTopPlusBottomMargin"
+          },
+          {
+            "propertyName": "OldParentWidth"
+          }
+        ]
+      },
       "variants": [
         {
           "areaMaxX": 98,

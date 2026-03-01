@@ -1,6 +1,7 @@
 {
   "author": "Tristan Rhodes (https://victrisgames.itch.io/)",
   "category": "Game mechanic",
+  "dimension": "",
   "extensionNamespace": "",
   "fullName": "Values of multiple objects",
   "gdevelopVersion": ">=5.5.222",

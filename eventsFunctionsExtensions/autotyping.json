@@ -1,6 +1,7 @@
 {
   "author": "westboy, daliyoucefmedakram@gmail.com, @bouh",
   "category": "User interface",
+  "dimension": "",
   "extensionNamespace": "",
   "fullName": "Auto typing animation for text (\"typewriter\" effect)",
   "gdevelopVersion": ">=5.5.222",
@@ -1009,7 +1010,26 @@
           "name": "TypedText"
         }
       ],
-      "sharedPropertyDescriptors": []
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "Text"
+          },
+          {
+            "propertyName": "Interval"
+          },
+          {
+            "propertyName": "CharacterJustAdded"
+          },
+          {
+            "propertyName": "FullText"
+          },
+          {
+            "propertyName": "TypedText"
+          }
+        ]
+      }
     }
   ],
   "eventsBasedObjects": []

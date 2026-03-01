@@ -1,6 +1,7 @@
 {
   "author": "VegeTato, D8H",
   "category": "Visual effect",
+  "dimension": "",
   "extensionNamespace": "",
   "fullName": "3D Flip",
   "gdevelopVersion": ">=5.5.222",
@@ -1407,7 +1408,49 @@
           "name": "Toggle"
         }
       ],
-      "sharedPropertyDescriptors": []
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "propertyName": "Resizable"
+          },
+          {
+            "propertyName": "Flippable"
+          },
+          {
+            "propertyName": "Animation"
+          },
+          {
+            "propertyName": "FlippingMethod"
+          },
+          {
+            "folderName": "Animation method",
+            "children": [
+              {
+                "propertyName": "FrontAnimation"
+              },
+              {
+                "propertyName": "BackAnimation"
+              }
+            ]
+          },
+          {
+            "propertyName": "Duration"
+          },
+          {
+            "propertyName": "IsFlipped"
+          },
+          {
+            "propertyName": "Width"
+          },
+          {
+            "propertyName": "ElapsedTime"
+          },
+          {
+            "propertyName": "Toggle"
+          }
+        ]
+      }
     }
   ],
   "eventsBasedObjects": []

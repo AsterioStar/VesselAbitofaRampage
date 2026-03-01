@@ -1,6 +1,7 @@
 {
   "author": "@4ian, Tristan Rhodes (https://victrisgames.itch.io/)",
   "category": "Movement",
+  "dimension": "",
   "extensionNamespace": "",
   "fullName": "Ellipse movement",
   "gdevelopVersion": ">=5.5.222",
@@ -1399,7 +1400,62 @@
           "name": "OldY"
         }
       ],
-      "sharedPropertyDescriptors": []
+      "propertiesFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "folderName": "Ellipse",
+            "children": [
+              {
+                "propertyName": "RadiusX"
+              },
+              {
+                "propertyName": "RadiusY"
+              }
+            ]
+          },
+          {
+            "folderName": "Speed",
+            "children": [
+              {
+                "propertyName": "LoopDuration"
+              },
+              {
+                "propertyName": "InitialTurningLeft"
+              },
+              {
+                "propertyName": "InitialDirectionAngle"
+              }
+            ]
+          },
+          {
+            "folderName": "Rotation",
+            "children": [
+              {
+                "propertyName": "ShouldRotate"
+              },
+              {
+                "propertyName": "RotationOffset"
+              }
+            ]
+          },
+          {
+            "propertyName": "CenterX"
+          },
+          {
+            "propertyName": "CenterY"
+          },
+          {
+            "propertyName": "MovementAngle"
+          },
+          {
+            "propertyName": "OldX"
+          },
+          {
+            "propertyName": "OldY"
+          }
+        ]
+      }
     }
   ],
   "eventsBasedObjects": []
