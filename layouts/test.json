@@ -20,7 +20,7 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": false,
-    "zoomFactor": 0.4057518905943834,
+    "zoomFactor": 0.529035740215685,
     "windowMask": false,
     "selectedLayer": "",
     "gameEditorMode": "instances-editor"
@@ -204,15 +204,16 @@
     },
     {
       "angle": 0,
-      "customSize": false,
-      "height": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 559,
       "keepRatio": true,
       "layer": "",
       "name": "Mother_Counter",
       "persistentUuid": "089c3476-f97c-4c1b-9423-a47c71c50309",
-      "width": 0,
-      "x": 374,
-      "y": -67,
+      "width": 364,
+      "x": 212,
+      "y": 20,
       "zOrder": 8,
       "numberProperties": [],
       "stringProperties": [],
@@ -1245,6 +1246,7 @@
     {
       "assetStoreId": "",
       "name": "Mother_Counter",
+      "persistentUuid": "e8c3f8f3-7717-4e6e-8fc7-46badf8688e9",
       "type": "BBText::BBText",
       "variables": [
         {
